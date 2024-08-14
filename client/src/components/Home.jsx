@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../index.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLeaf, faHandshake, faBook, faFire } from '@fortawesome/free-solid-svg-icons';
+import { faPersonPraying, faHandshake, faBook, faFire, faEarListen } from '@fortawesome/free-solid-svg-icons';
 
 
 // Custom Next Arrow
@@ -68,7 +68,7 @@ const Home = () => {
                         <div key={index} className="relative w-full h-[95vh]">
                             <img src={`./carousel/pic${index + 1}.jpg`} alt={`Carousel ${index + 1}`} className="w-full h-full object-cover" />
                             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
-                                <h2 className="text-xl md:text-3xl font-bold text-white text-center px-4 whitespace-pre-line">
+                                <h2 className="text-xl md:text-3xlHumphrey font-bold text-white text-center px-4 whitespace-pre-line">
                                     {text}
                                 </h2>
                             </div>
@@ -93,8 +93,8 @@ const Home = () => {
                         <span className="italic">Ap. Rehoboth Fanaka</span>
                     </p>
                 </div>
-                <aside className="w-full md:w-[40%] p-4 md:h-[80vh]">
-                    <img src="./carousel/pic1.jpg" alt="Leader" className="w-full h-full object-cover rounded-lg animate-fadeInUp" />
+                <aside className="w-full md:w-[40%] p-4 md:h-[90vh]">
+                    <img src="/welcome.jpg" alt="Leader" className="w-full h-full object-cover rounded-lg animate-fadeInUp" />
                 </aside>
             </section>
 
@@ -103,29 +103,33 @@ const Home = () => {
             {/* Section 3 */}
             <section className="relative z-10 p-8 animate-slideIn">
                 <div className="w-full max-w-4xl mx-auto p-6 bg-[#F5A623] rounded-lg shadow-md">
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+                    <div className="grid grid-cols-1 md:grid-cols-5 gap-6 text-center">
                         <div>
-                            <FontAwesomeIcon icon={faLeaf} className="text-4xl text-gray-700" />
-                            <h3 className="mt-2 text-xl font-semibold text-gray-700">Sunday Services</h3>
-                            <p className="mt-1 text-sm text-gray-600">Sunday School: 9:30am<br />Worship Service: 10:00am - 12:00pm</p>
+                            <FontAwesomeIcon icon={faPersonPraying} className="text-4xl text-gray-700" />
+                            <h3 className="mt-2 text-xl font-semibold text-gray-700">Prayers</h3>
+                            <p className="mt-1 text-sm text-gray-600"><strong>Every</strong><br />Monday, Wednesday, Friday 11:00pm - 12midnight</p>
                         </div>
                         <div>
-                            <FontAwesomeIcon icon={faHandshake} className="text-4xl text-blue-600" />
-                            <h3 className="mt-2 text-xl font-semibold text-blue-600">Thanksgiving Service</h3>
-                            <p className="mt-1 text-sm text-gray-600">Every First Sunday of the Month:<br />10:00am - 12:30pm</p>
+                            <FontAwesomeIcon icon={faBook} className="text-4xl text-blue-600" />
+                            <h3 className="mt-2 text-xl font-semibold text-blue-600">Bible Study</h3>
+                            <p className="mt-1 text-sm text-gray-600"><strong>Every</strong><br /> Tuesday 9:00pm - 10:00pm</p>
                         </div>
                         <div>
-                            <FontAwesomeIcon icon={faBook} className="text-4xl text-yellow-600" />
-                            <h3 className="mt-2 text-xl font-semibold text-yellow-600">Bible Study</h3>
-                            <p className="mt-1 text-sm text-gray-600">Wednesdays: 7:00pm</p>
+                            <FontAwesomeIcon icon={faFire} className="text-4xl text-yellow-600" />
+                            <h3 className="mt-2 text-xl font-semibold text-yellow-600">Teachings</h3>
+                            <p className="mt-1 text-sm text-gray-600"><strong>Every</strong>< br/>Wednesday 9:00pm - 10:00pm</p>
                         </div>
                         <div>
-                            <FontAwesomeIcon icon={faFire} className="text-4xl text-green-600" />
-                            <h3 className="mt-2 text-xl font-semibold text-green-600">Solutions Night</h3>
-                            <p className="mt-1 text-sm text-gray-600">Every Second Friday of the Month:<br />8:00pm - 12:00am</p>
+                            <FontAwesomeIcon icon={faHandshake} className="text-4xl text-green-600" />
+                            <h3 className="mt-2 text-xl font-semibold text-green-600">Meetings</h3>
+                            <p className="mt-1 text-sm text-gray-600"><strong>Every</strong><br />Sunday 9:00pm</p>
+                        </div>
+                        <div>
+                            <FontAwesomeIcon icon={faEarListen} className="text-4xl text-purple-600" />
+                            <h3 className="mt-2 text-xl font-semibold text-purple-600">Ministers' Masterclass</h3>
+                            <p className="mt-1 text-sm text-gray-600"><strong>Every</strong><br />Wednesday 9:00pm - 10:00pm</p>
                         </div>
                     </div>
-
                 </div>
             </section>
         </div>
