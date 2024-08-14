@@ -47,7 +47,10 @@ const SearchButton = () => {
           </div>
         </div>
       )}
+      
     </div>
+     
+    
   );
 };
 
