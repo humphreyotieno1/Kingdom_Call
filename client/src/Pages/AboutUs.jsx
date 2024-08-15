@@ -7,12 +7,12 @@ const AboutUsPage = () => {
 
 
   return (
-    <div className="flex flex-col items-center justify-center py-12">
+    <div className="flex flex-col items-center justify-center py-12 bg-[#ebebeb]">
         <div className="w-full py-4 bg-[linear-gradient(180deg,#e48515,#ebebeb)] py-10">
             <h1 className="text-3xl font-bold text-black mt-20 mb-2 text-center py-4">About Us</h1>
         </div>
       
-      <p className="text-center text-gray-700 max-w-md mb-8 mt-4">
+      <p className="text-center text-gray-700 max-w-md mb-8">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
       </p>
       <div className="flex justify-center">

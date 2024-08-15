@@ -31,7 +31,7 @@ const WhatWeBelievePage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center bg-[#ebebeb]">
       <div className="w-full py-4 bg-[linear-gradient(180deg,#e48515,#ebebeb)] py-10">
         <h1 className="mt-20 text-2xl font-bold mb-8 text-center py-4">Beliefs</h1>
       </div>
