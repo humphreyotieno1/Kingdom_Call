@@ -102,7 +102,7 @@ const Home = () => {
 
             {/* Section 3 */}
             <section className="relative z-10 p-8 animate-slideIn">
-                <div className="w-full max-w-4xl mx-auto p-6 bg-[#F5A623] rounded-lg shadow-md">
+                <div className="w-full max-w-4xl mx-auto p-6 bg-[#E48515] rounded-lg shadow-md">
                     <div className="grid grid-cols-1 md:grid-cols-5 gap-6 text-center">
                         <div>
                             <FontAwesomeIcon icon={faPersonPraying} className="text-4xl text-gray-700" />

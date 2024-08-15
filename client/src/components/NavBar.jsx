@@ -52,7 +52,7 @@ const NavBar = () => {
                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4"/>
               </svg>
             </button>
-            <div className={`absolute left-0 mt-2 z-10 ${activeDropdown === 'mediaDropdown' ? '' : 'hidden'} font-normal bg-transparent divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}>
+            <div className={`absolute left-0 mt-2 z-10 ${activeDropdown === 'mediaDropdown' ? '' : 'hidden'} font-normal bg-[#E48515] divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}>
               <div className="py-2 text-sm text-gray-700 dark:text-gray-400">
                 <Link to="/videos" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Videos</Link>
                 <Link to="/gallery" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Gallery</Link>
@@ -71,7 +71,7 @@ const NavBar = () => {
                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4"/>
               </svg>
             </button>
-            <div className={`absolute left-0 mt-2 z-10 ${activeDropdown === 'resourcesDropdown' ? '' : 'hidden'} font-normal bg-transparent divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}>
+            <div className={`absolute left-0 mt-2 z-10 ${activeDropdown === 'resourcesDropdown' ? '' : 'hidden'} font-normal bg-[#E48515] divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}>
               <div className="py-2 text-sm text-gray-700 dark:text-gray-400">
                 <Link to="/testimonies" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Testimonies</Link>
                 <Link to="/sermons" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sermons</Link>
