@@ -8,14 +8,15 @@ const ServicesPage = () => {
     };
 
     return (
-        <div className="container mx-auto px-4 py-8 mt-20 md:mt-24 lg:mt-34">
-            <h1 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-gray-800 p-4 sm:p-6 md:p-8 lg:p-10">
-                Our Services
-            </h1>
-
+        <div className="flex flex-col items-center justify-center bg-[#ebebeb]">
+          <div className="w-full py-4 bg-[linear-gradient(180deg,#e48515,#ebebeb)] py-10">
+                <h1 className="text-3xl font-bold text-black mt-20 mb-2 text-center py-4">
+                    Our Services
+                </h1>
+            </div>
             <hr className="w-24 h-1 mx-auto my-6 bg-gray-100 border-0 rounded dark:bg-gray-700" />
 
-            <div className="flex flex-col gap-6 items-start lg:flex-row lg:items-center">
+            <div className="flex flex-col gap-6 items-start lg:flex-row lg:items-center px-8 mb-4">
                 {/* Image Section */}
                 <div className="w-full lg:w-1/2">
                     <img

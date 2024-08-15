@@ -2,7 +2,7 @@ import React from "react";
 
 const WhoWeArePage = () => {
     return (
-        <div className="flex flex-col items-center justify-center py-12 px-4 bg-white">
+        <div className="flex flex-col items-center justify-center py-12 px-4 bg-[#ebebeb]">
             <div className="max-w-3xl mb-8 mt-20 border-2 border-[#E48515] p-6 rounded-lg">
                 <h1 className="text-3xl font-bold text-center text-black mb-4">Our Vision</h1>
                 <p className="text-lg text-gray-700 text-center">
