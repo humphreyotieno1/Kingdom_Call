@@ -16,13 +16,73 @@ const MediaPage = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">Videos</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {/* Replace these divs with actual video thumbnail components */}
-            <div className="video-thumbnail bg-gray-200 h-40 md:h-48 lg:h-56"></div>
-            <div className="video-thumbnail bg-gray-200 h-40 md:h-48 lg:h-56"></div>
-            <div className="video-thumbnail bg-gray-200 h-40 md:h-48 lg:h-56"></div>
-            <div className="video-thumbnail bg-gray-200 h-40 md:h-48 lg:h-56"></div>
-            <div className="video-thumbnail bg-gray-200 h-40 md:h-48 lg:h-56"></div>
-            <div className="video-thumbnail bg-gray-200 h-40 md:h-48 lg:h-56"></div>
+            {/* Embedding the same video in each iframe */}
+            <iframe 
+              width="560" 
+              height="315" 
+              src="https://www.youtube.com/embed/uuTwyTC7fK4?si=zpHCEAEX_LXOU3zF" 
+              title="YouTube video player" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerPolicy="strict-origin-when-cross-origin" 
+              allowFullScreen
+              className="w-full h-64 md:h-80 lg:h-96"
+            ></iframe>
+            <iframe 
+              width="560" 
+              height="315" 
+              src="https://www.youtube.com/embed/uuTwyTC7fK4?si=zpHCEAEX_LXOU3zF" 
+              title="YouTube video player" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerPolicy="strict-origin-when-cross-origin" 
+              allowFullScreen
+              className="w-full h-64 md:h-80 lg:h-96"
+            ></iframe>
+            <iframe 
+              width="560" 
+              height="315" 
+              src="https://www.youtube.com/embed/uuTwyTC7fK4?si=zpHCEAEX_LXOU3zF" 
+              title="YouTube video player" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerPolicy="strict-origin-when-cross-origin" 
+              allowFullScreen
+              className="w-full h-64 md:h-80 lg:h-96"
+            ></iframe>
+            <iframe 
+              width="560" 
+              height="315" 
+              src="https://www.youtube.com/embed/uuTwyTC7fK4?si=zpHCEAEX_LXOU3zF" 
+              title="YouTube video player" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerPolicy="strict-origin-when-cross-origin" 
+              allowFullScreen
+              className="w-full h-64 md:h-80 lg:h-96"
+            ></iframe>
+            <iframe 
+              width="560" 
+              height="315" 
+              src="https://www.youtube.com/embed/uuTwyTC7fK4?si=zpHCEAEX_LXOU3zF" 
+              title="YouTube video player" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerPolicy="strict-origin-when-cross-origin" 
+              allowFullScreen
+              className="w-full h-64 md:h-80 lg:h-96"
+            ></iframe>
+            <iframe 
+              width="560" 
+              height="315" 
+              src="https://www.youtube.com/embed/uuTwyTC7fK4?si=zpHCEAEX_LXOU3zF" 
+              title="YouTube video player" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerPolicy="strict-origin-when-cross-origin" 
+              allowFullScreen
+              className="w-full h-64 md:h-80 lg:h-96"
+            ></iframe>
           </div>
           <div className="text-center mt-8">
             <a href="https://www.youtube.com/channel/YOUR_CHANNEL_LINK" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-[#E48515] text-white font-bold rounded-full">
@@ -70,13 +130,17 @@ const MediaPage = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">Live Sessions</h2>
           <div className="live-video-embed">
-            {/* Replace src with the actual live session link */}
+            {/* Embed the specific YouTube video */}
             <iframe 
-              src="https://www.youtube.com/embed/your_live_session_video_link" 
+              width="560" 
+              height="315" 
+              src="https://www.youtube.com/embed/uuTwyTC7fK4?si=zpHCEAEX_LXOU3zF" 
+              title="YouTube video player" 
               frameBorder="0" 
-              allowFullScreen 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerPolicy="strict-origin-when-cross-origin" 
+              allowFullScreen
               className="w-full h-64 md:h-80 lg:h-96"
-              title="Live Session"
             ></iframe>
           </div>
         </div>
