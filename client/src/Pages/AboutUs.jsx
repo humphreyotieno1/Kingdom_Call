@@ -75,7 +75,7 @@ const AboutUsPage = () => {
 
         <div className="border border-[#E48515] p-6 rounded-lg">
           <h2 className="text-xl font-semibold text-black mb-2 text-center">Departments</h2>
-          <p className="text-gray-700 mb-4 text-center">Lorem ipsum dolor sit amet nulla adipiscing elit. Nunc maximus, nec ut commodo</p>
+          <p className="text-gray-700 mb-4 text-center">Learn about our departments and meet our wonderful department heads. </p>
           <div className="flex justify-center">
             <button
              onClick={() => navigate("/departments")} 
@@ -87,7 +87,7 @@ const AboutUsPage = () => {
 
         <div className="border border-[#E48515] p-6 rounded-lg">
           <h2 className="text-xl font-semibold text-black mb-2 text-center">Leadership</h2>
-          <p className="text-gray-700 mb-4 text-center">Lorem ipsum dolor sit amet nulla adipiscing elit. Nunc maximus, nec ut commodo</p>
+          <p className="text-gray-700 mb-4 text-center">Meet our leaders...</p>
           <div className="flex justify-center">
             <button 
              onClick={() => navigate("/about-us/leadership")}
