@@ -37,7 +37,6 @@ const NavBar = () => {
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center space-x-4">
-          <Link to="/" className="py-2 px-3 hover:text-gray-700 rounded">Home</Link>
           <Link to="/about-us" className="py-2 px-3 hover:text-gray-700">About Us</Link>
           <Link to="/services" className="py-2 px-3 hover:text-gray-700">Services</Link>
           <Link to="/departments" className="py-2 px-3 hover:text-gray-700">Departments</Link>
