@@ -35,7 +35,7 @@ const WhatWeBelievePage = () => {
       <div className="w-full py-4 bg-[linear-gradient(180deg,#e48515,#ebebeb)] py-10">
         <h1 className="mt-20 text-2xl font-bold mb-8 text-center py-4">Beliefs</h1>
       </div>
-      <div className="flex flex-col md:flex-row gap-4 w-full max-w-4xl mt-8 px-4 md:px-0 mb-8">
+      <div className="flex flex-col md:flex-row gap-4 w-full max-w-6xl mt-8 px-4 md:px-0 mb-8">
         <div className="w-full md:w-1/2 order-1 md:order-2">
           <img src="/path-to-your-image.jpg" alt="What We Believe Image" className="w-full h-auto" />
         </div>

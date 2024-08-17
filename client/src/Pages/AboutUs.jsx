@@ -13,7 +13,7 @@ const AboutUsPage = () => {
         </div>
       
       <p className="text-center text-gray-700 max-w-md mb-8">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat
+       We are an international and interdenominational ministry majorly of the youth thoroughly invested in seeing the Kingdom of God established in the hearts of men and women on earth. We also welcome even the old.
       </p>
       <div className="flex justify-center">
         <button 
@@ -26,7 +26,7 @@ const AboutUsPage = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full px-4 md:px-8">
         <div className="border border-[#E48515] p-6 rounded-lg">
           <h2 className="text-xl font-semibold text-black mb-2 text-center">What we believe</h2>
-          <p className="text-gray-700 mb-4">Lorem ipsum dolor sit amet nulla adipiscing elit. Nunc maximus, nec ut commodo</p>
+          <p className="text-gray-700 mb-4 text-center">We believe in God. We believe in the Dominion of Christ given to us to occupy until He comes!</p>
           <div className="flex justify-center">
           <button 
             onClick={() => navigate("/about-us/what-we-believe")}
@@ -39,7 +39,7 @@ const AboutUsPage = () => {
 
         <div className="border border-[#E48515] p-6 rounded-lg">
           <h2 className="text-xl font-semibold text-black mb-2 text-center">Our Values</h2>
-          <p className="text-gray-700 mb-4">Lorem ipsum dolor sit amet nulla adipiscing elit. Nunc maximus, nec ut commodo</p>
+          <p className="text-gray-700 mb-4 text-center">Lorem ipsum dolor sit amet nulla adipiscing elit. Nunc maximus, nec ut commodo</p>
           <div className="flex justify-center">
             <button 
              onClick={()=> navigate("/about-us/values")}
@@ -51,7 +51,7 @@ const AboutUsPage = () => {
 
         <div className="border border-[#E48515] p-6 rounded-lg">
           <h2 className="text-xl font-semibold text-black mb-2 text-center">Purpose</h2>
-          <p className="text-gray-700 mb-4">Lorem ipsum dolor sit amet nulla adipiscing elit. Nunc maximus, nec ut commodo</p>
+          <p className="text-gray-700 mb-4 text-center">Lorem ipsum dolor sit amet nulla adipiscing elit. Nunc maximus, nec ut commodo</p>
           <div className="flex justify-center">
             <button 
              onClick={()=> navigate("/about-us/purpose")}
@@ -63,7 +63,7 @@ const AboutUsPage = () => {
 
         <div className="border border-[#E48515] p-6 rounded-lg">
           <h2 className="text-xl font-semibold text-black mb-2 text-center">Our Story</h2>
-          <p className="text-gray-700 mb-4">Lorem ipsum dolor sit amet nulla adipiscing elit. Nunc maximus, nec ut commodo</p>
+          <p className="text-gray-700 mb-4 text-center">Lorem ipsum dolor sit amet nulla adipiscing elit. Nunc maximus, nec ut commodo</p>
           <div className="flex justify-center">
             <button 
              onClick={() => navigate("/about-us/our-story")}
@@ -75,7 +75,7 @@ const AboutUsPage = () => {
 
         <div className="border border-[#E48515] p-6 rounded-lg">
           <h2 className="text-xl font-semibold text-black mb-2 text-center">Departments</h2>
-          <p className="text-gray-700 mb-4">Lorem ipsum dolor sit amet nulla adipiscing elit. Nunc maximus, nec ut commodo</p>
+          <p className="text-gray-700 mb-4 text-center">Lorem ipsum dolor sit amet nulla adipiscing elit. Nunc maximus, nec ut commodo</p>
           <div className="flex justify-center">
             <button
              onClick={() => navigate("/departments")} 
@@ -87,7 +87,7 @@ const AboutUsPage = () => {
 
         <div className="border border-[#E48515] p-6 rounded-lg">
           <h2 className="text-xl font-semibold text-black mb-2 text-center">Leadership</h2>
-          <p className="text-gray-700 mb-4">Lorem ipsum dolor sit amet nulla adipiscing elit. Nunc maximus, nec ut commodo</p>
+          <p className="text-gray-700 mb-4 text-center">Lorem ipsum dolor sit amet nulla adipiscing elit. Nunc maximus, nec ut commodo</p>
           <div className="flex justify-center">
             <button 
              onClick={() => navigate("/about-us/leadership")}
