@@ -20,7 +20,7 @@ const MediaPage = () => {
             <iframe 
               width="560" 
               height="315" 
-              src="https://www.youtube.com/embed/uuTwyTC7fK4?si=zpHCEAEX_LXOU3zF" 
+              src="https://www.youtube.com/embed/tx_dMT4vaWI?si=dkVLEhSwIKIEHxi6" 
               title="YouTube video player" 
               frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -31,7 +31,7 @@ const MediaPage = () => {
             <iframe 
               width="560" 
               height="315" 
-              src="https://www.youtube.com/embed/uuTwyTC7fK4?si=zpHCEAEX_LXOU3zF" 
+              src="https://www.youtube.com/embed/zU4gUUTJUVs?si=nYHwhKNbI1Nadhmt" 
               title="YouTube video player" 
               frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -42,7 +42,7 @@ const MediaPage = () => {
             <iframe 
               width="560" 
               height="315" 
-              src="https://www.youtube.com/embed/uuTwyTC7fK4?si=zpHCEAEX_LXOU3zF" 
+              src="https://www.youtube.com/embed/6YKY9LGqSYw?si=R5ZYb0wYufZgoCYM" 
               title="YouTube video player" 
               frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -53,7 +53,7 @@ const MediaPage = () => {
             <iframe 
               width="560" 
               height="315" 
-              src="https://www.youtube.com/embed/uuTwyTC7fK4?si=zpHCEAEX_LXOU3zF" 
+              src="https://www.youtube.com/embed/x-FzcPftJ9A?si=Rl0hYL--Al2CPHor" 
               title="YouTube video player" 
               frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -64,7 +64,7 @@ const MediaPage = () => {
             <iframe 
               width="560" 
               height="315" 
-              src="https://www.youtube.com/embed/uuTwyTC7fK4?si=zpHCEAEX_LXOU3zF" 
+              src="https://www.youtube.com/embed/VpBMRXUwXIk?si=uAB0j_YPnOPIesBX" 
               title="YouTube video player" 
               frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -75,7 +75,7 @@ const MediaPage = () => {
             <iframe 
               width="560" 
               height="315" 
-              src="https://www.youtube.com/embed/uuTwyTC7fK4?si=zpHCEAEX_LXOU3zF" 
+              src="https://www.youtube.com/embed/n5cdXPmnf8w?si=UYW95MHfp24JO7FH" 
               title="YouTube video player" 
               frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -85,7 +85,7 @@ const MediaPage = () => {
             ></iframe>
           </div>
           <div className="text-center mt-8">
-            <a href="https://www.youtube.com/channel/YOUR_CHANNEL_LINK" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-[#E48515] text-white font-bold rounded-full">
+            <a href="https://www.youtube.com/@WeareKingdomCall" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-[#E48515] text-white font-bold rounded-full">
               View More
             </a>
           </div>
@@ -134,7 +134,7 @@ const MediaPage = () => {
             <iframe 
               width="560" 
               height="315" 
-              src="https://www.youtube.com/embed/uuTwyTC7fK4?si=zpHCEAEX_LXOU3zF" 
+              src="https://www.youtube.com/embed/dlcu04ghbC4?si=-5TX7uW2uKt-ZD7a" 
               title="YouTube video player" 
               frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
