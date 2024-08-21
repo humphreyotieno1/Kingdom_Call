@@ -57,7 +57,7 @@ const NavBar = () => {
         </div>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden md:flex space-x-4 mx-auto">
           <Link to="/about-us" className="py-2 px-3 hover:text-gray-700">About Us</Link>
           <Link to="/services" className="py-2 px-3 hover:text-gray-700">Services</Link>
           <Link to="/departments" className="py-2 px-3 hover:text-gray-700">Departments</Link>
@@ -104,24 +104,8 @@ const NavBar = () => {
             </div>
           </div>
 
-          <Link to="/contact" className="py-2 px-3 hover:text-gray-700">Contact</Link>
-          
-          {/* Search input */}
-          <div className={`relative ${isSearchVisible ? 'block' : 'hidden md:block'}`}>
-            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-              <svg className="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-              </svg>
-              <span className="sr-only">Search icon</span>
-            </div>
-            <input 
-              type="text" 
-              id="search-navbar" 
-              className="w-full p-2 pl-10 text-sm text-gray-50 bg-transparent border-0 placeholder-gray-500 focus:ring-0 focus:outline-none shadow-lg" 
-              placeholder="search..."
-            />
-          </div>
-        </div>
+          <Link to="/contact" className="py-2 px-3 hover:text-gray-700">Contact Us</Link>
+        </div> 
 
         {/* Mobile View */}
         <div className="md:hidden flex flex-col w-full">
@@ -138,50 +122,6 @@ const NavBar = () => {
                 </svg>
               )}
             </button>
-
-            {/* Search Icon */}
-            {isSearchVisible ? (
-              <button 
-              onClick={toggleSearch} 
-              type="button" 
-              className="text-white focus:outline-none rounded-lg text-sm p-2.5"
-              >
-              <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 6l12 12M6 18L18 6"/>
-              </svg>
-              <span className="sr-only">Close search</span>
-             </button>
-              
-              ) : (
-                
-               <button 
-               onClick={toggleSearch} 
-               type="button" 
-               data-collapse-toggle="navbar-search" 
-               aria-controls="navbar-search" 
-               aria-expanded={isSearchVisible} 
-               className="text-white focus:outline-none rounded-lg text-sm p-2.5"
-             >
-               <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-               </svg>
-               <span className="sr-only">Search icon</span>
-             </button>
-            )}
-            {/* Search Input */}
-            {isSearchVisible && (
-               
-              <div className="w-full px-4 py-2 ">
-               <input 
-                 type="text" 
-                 id="search-navbar" 
-                 className="w-full p-2 pl-10 text-sm text-gray-50 bg-transparent border-0 placeholder-gray-500 focus:ring-0 focus:outline-none shadow-lg" 
-                 placeholder="search..."
-               />
-             </div>
-             
-
-            )}
           </div>
 
           {/* Mobile Menu */}
