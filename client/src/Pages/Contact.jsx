@@ -13,7 +13,7 @@ const ContactUsPage = () => {
               <i className="fas fa-phone-alt text-4xl sm:text-3xl text-black"></i>
             </div>
             <h2 className="text-lg sm:text-sm font-medium">Telephone</h2>
-            <p className="text-lg sm:text-sm text-gray-600"> +254 740 882 365(office) </p>
+            <p className="text-lg sm:text-sm text-gray-600"> +254 115 979 303(office) </p>
           </div>
           <div className="sm:col-span-1">
             <div className="flex justify-center mb-2">

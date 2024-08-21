@@ -128,7 +128,7 @@ const ResourcesPage = () => {
         <div className="w-full mb-8 mx-auto md:px-12 lg:px-20">
           <div className="flex flex-col md:flex-row justify-center md:space-x-8 h-full">
             <div className="bg-gray-300 w-full md:w-1/2 order-1 md:order-1">
-              <img src="./path.jpeg" alt="sermons image" />
+              <img src="./sermon.jpg" alt="sermons image" />
             </div>
             <div className="w-full md:w-1/2 order-2 md:order-2 rounded shadow-lg">
               <div className="space-y-2">

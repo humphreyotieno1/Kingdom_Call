@@ -4,7 +4,7 @@ const LeadershipPage = () => {
   const leaders = [
     {
       title: "Vision Bearer",
-      image: "/path-to-main-leader-image.jpg",
+      image: "/media3.jpg",
       description: "This is the Founder and vision carrier of the whole ministry. He also operates with a team of 6 executives as follows:",
     },
     {
