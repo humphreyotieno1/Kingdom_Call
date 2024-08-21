@@ -15,6 +15,11 @@ import PurposePage from './Pages/Purpose';
 import OurStoryPage from './Pages/OurStory';
 import LeadershipPage from './Pages/Leadership';
 import OurValuesPage from './Pages/OurValues';
+import VideosPage from './Pages/Videos';
+import GalleryPage from './Pages/Gallery';
+import LiveSessionsPage from './Pages/LiveSessions';
+import PrayerRequestPage from './Pages/PrayerRequest';
+
 
 const App = () => {
   return (
@@ -32,8 +37,15 @@ const App = () => {
 
         <Route path='/services' element={<ServicesPage />} />
         <Route path='/departments' element={<DepartmentsPage />} />
+
         <Route path='/media' element={<MediaPage />} />
+        <Route path="media/videos" element={<VideosPage />} />
+        <Route path="media/gallery" element={<GalleryPage />} />
+        <Route path="media/live-sessions" element={<LiveSessionsPage />} />
+
         <Route path='/resources' element={<ResourcesPage />} />
+        <Route path='/resources/prayer-request' element={<PrayerRequestPage />} />
+
         <Route path='/contact' element={<ContactUsPage />} />
       </Routes>
       <Footer />
