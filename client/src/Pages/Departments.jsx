@@ -53,29 +53,33 @@ const DepartmentsPage = () => {
 
     const carouselItems = [
         {
-            image: "/pathtoimage.jpg",
+            image: "/music.jpg",
             title: "Music and Dance Ministry",
         },
         {
-            image: "/pathtoimage.jpg",
+            image: "/prayer.jpg",
             title: "Prayer",
         },
         {
-            image: "/pathtoimage.jpg",
+            image: "/media.jpg",
             title: "Media",
         },
         {
-            image: "/pathtoimage.jpg",
+            image: "/hospitality.jpg",
             title: "Hospitality",
         },
         {
-            image: "/pathtoimage.jpg",
+            image: "/word.jpg",
             title: "Word",
         },
         {
-            image: "/pathtoimage.jpg",
+            image: "/welfare.jpg",
             title: "Welfare",
         },
+        {
+            image: 'worship.jpg',
+            title: 'Worship',
+        }
     ];
 
     const NextArrow = ({onClick}) => (
@@ -114,7 +118,7 @@ const DepartmentsPage = () => {
             </div>
             <div className="flex flex-col md:flex-row gap-4 w-full max-w-6xl mt-8 px-4 md:px-0 mb-8">
                 <div className="w-full md:w-1/2 order-1 md:order-2">
-                    <img src="/path-to-your-image.jpg" alt="Departments image" className="w-full h-auto" />
+                    <img src="/departments.jpg" alt="Departments image" className="w-full h-auto" />
                 </div>
                 <div className="w-full md:w-3/4 order-1 md:order-2">
                     <div className="space-y-2">
@@ -140,7 +144,7 @@ const DepartmentsPage = () => {
 
             <div className="flex flex-col md:flex-row gap-4 w-full max-w-6xl mt-8 px-2 md:px-0 mb-8">
                 <div className="w-full md:w-1/2 order-1 md:order-2">
-                    <img src="/path-to-your-image.jpg" alt="CellGroups image" className="w-full h-auto" />
+                    <img src="/cell.jpg" alt="CellGroups image" className="w-full h-auto" />
                 </div>
                 <div className="w-full md:w-3/4 order-1 md:order-2">
                     <div className="space-y-2">

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram, faLinkedin, faTelegram, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faInstagram, faTelegram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faArrowUp, faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => {
@@ -19,7 +19,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col items-center">
           <h3 className="text-xl font-bold">Contact Us</h3>
-          <p className="mt-2"><FontAwesomeIcon icon={faPhone} /> +254 740 882 365</p>
+          <p className="mt-2"><FontAwesomeIcon icon={faPhone} /> +254 115 979 303</p>
           <p className="mt-1"><FontAwesomeIcon icon={faEnvelope} /> wearekingdomcall@gmail.com</p>
           <p className="mt-1"><FontAwesomeIcon icon={faMapMarkerAlt} /> Reach Out to Us</p>
         </div>
