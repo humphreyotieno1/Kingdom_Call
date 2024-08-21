@@ -23,7 +23,7 @@ const AboutUsPage = () => {
         </button>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full px-4 md:px-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full px-4 md:px-16 lg:px-32 mx-4 md:mx-20 lg:mx-40">
         <div className="border border-[#E48515] p-6 rounded-lg">
           <h2 className="text-xl font-semibold text-black mb-2 text-center">What we believe</h2>
           <p className="text-gray-700 mb-4 text-center">We believe in God. We believe in the Dominion of Christ given to us to occupy until He comes!</p>
