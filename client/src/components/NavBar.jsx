@@ -49,7 +49,7 @@ const NavBar = () => {
       <div className="flex flex-col md:flex-row justify-between items-center py-2 px-4 text-sm w-full">
         {/* Logo and Title */}
         <div className="flex items-center space-x-4">
-          <img src="./kingdom_logo.png" alt="Logo" className="h-16" />
+          <img src="/kingdom_logo.png" alt="Logo" className="h-16" />
           <div className="flex flex-col">
             <Link to="/" className="hover:text-gray-700 text-2xl font-extrabold">Kingdom Call</Link>
             <p className="hover:text-gray-300 italic">Your kingdom come... Your will be done.</p>
@@ -74,11 +74,11 @@ const NavBar = () => {
                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4"/>
               </svg>
             </Link>
-            <div className={`absolute left-0 ${isMediaDropdownOpen ? 'block' : 'hidden'}`}>
-              <div className="py-2 text-sm text-gray-700 dark:text-gray-400">
-                <Link to="/media/videos" className="block px-4 py-4 hover:bg-[#E48515] text-white hover:text-white w-full text-left rounded">Videos</Link>
-                <Link to="/media/gallery" className="block px-4 py-2 hover:bg-[#E48515] text-white hover:text-white w-full text-left rounded">Gallery</Link>
-                <Link to="/media/live-sessions"className="block px-4 py-2 hover:bg-[#E48515] text-white hover:text-white w-full text-left rounded">Live Sessions</Link>
+            <div className={`absolute left-0 ${isMediaDropdownOpen ? 'block' : 'hidden'} border border-[#e48515] bg-[#e48515] rounded`}>
+              <div className="mt-2 text-sm text-gray-700 dark:text-gray-400">
+                <Link to="/media/videos" className="block px-4 py-2 hover:bg-[#C46F12] text-white w-full text-left rounded">Videos</Link>
+                <Link to="/media/gallery" className="block px-4 py-2 hover:bg-[#C46F12] text-white w-full text-left rounded">Gallery</Link>
+                <Link to="/media/live-sessions"className="block px-4 py-2 hover:bg-[#C46F12] text-white w-full text-left rounded">Live Sessions</Link>
               </div>
             </div>
           </div>
@@ -93,13 +93,13 @@ const NavBar = () => {
                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4"/>
               </svg>
             </Link>
-            <div className={`absolute left-0 ${isResourceDropdownOpen ? 'block' : 'hidden'}`}>
-              <div className="py-2 text-sm text-gray-700 dark:text-gray-400">
-                <Link to="/testimonies" className="block px-4 py-4 hover:bg-[#E48515] text-white hover:text-white rounded">Testimonies</Link>
-                <Link to="/sermons" className="block px-4 py-2 hover:bg-[#E48515] text-white hover:text-white rounded">Sermons</Link>
-                <Link to="/stories" className="block px-4 py-2 hover:bg-[#E48515] text-white hover:text-white rounded">Stories</Link>
-                <Link to="/prayer-requests" className="block px-4 py-2 hover:bg-[#E48515] text-white hover:text-white rounded">Prayer Requests</Link>
-                <Link to="/contact" className="block px-4 py-2 hover:bg-[#E48515] text-white hover:text-white rounded">Get Help</Link>
+            <div className={`absolute left-0 ${isResourceDropdownOpen ? 'block' : 'hidden'} border border-[#e48515] bg-[#e48515] rounded`}>
+              <div className="mt-2 text-sm text-gray-700 dark:text-gray-400 ">
+                <Link to="/testimonies" className="block px-4 py-2 hover:bg-[#C46F12] text-white w-full text-left rounded">Testimonies</Link>
+                <Link to="/sermons" className="block px-4 py-2 hover:bg-[#C46F12] text-white w-full text-left rounded">Sermons</Link>
+                <Link to="/stories" className="block px-4 py-2 hover:bg-[#C46F12] text-white w-full text-left rounded">Stories</Link>
+                <Link to="resources/prayer-request" className="block px-4 py-2 hover:bg-[#C46F12] text-white w-full text-left rounded">Prayer Requests</Link>
+                <Link to="/contact" className="block px-4 py-2 hover:bg-[#C46F12] text-white w-full text-left rounded">Get Help</Link>
               </div>
             </div>
           </div>

@@ -18,6 +18,7 @@ import OurValuesPage from './Pages/OurValues';
 import VideosPage from './Pages/Videos';
 import GalleryPage from './Pages/Gallery';
 import LiveSessionsPage from './Pages/LiveSessions';
+import PrayerRequestPage from './Pages/PrayerRequest';
 
 
 const App = () => {
@@ -43,6 +44,8 @@ const App = () => {
         <Route path="media/live-sessions" element={<LiveSessionsPage />} />
 
         <Route path='/resources' element={<ResourcesPage />} />
+        <Route path='/resources/prayer-request' element={<PrayerRequestPage />} />
+
         <Route path='/contact' element={<ContactUsPage />} />
       </Routes>
       <Footer />
