@@ -212,7 +212,10 @@ const NavBar = () => {
               </div>
 
               <button 
-                onClick={() => toggleDropdown('mobileResourcesDropdown')}
+                onClick={() => {
+                  navigate('/resources')
+                  toggleDropdown('mobileResourcesDropdown')
+                }}
                 className="flex items-center py-2 px-3 hover:text-gray-700"
               >
                 Resources 
