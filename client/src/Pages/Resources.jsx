@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState, useEffect} from "react";
 import Pagination from "../components/pagination";
 
 const ResourcesPage = () => {
@@ -72,6 +72,22 @@ const ResourcesPage = () => {
     },
   ];
 
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    const section = url.searchParams.get('section');
+    if (section) {
+      scrollToSection(section);
+    }
+  }, []);
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+
   return (
     <div className="flex flex-col items-center justify-center bg-[#ebebeb]">
       {/* Resources Header */}
@@ -82,11 +98,11 @@ const ResourcesPage = () => {
       </div>
 
       {/* Testimonials Section */}
-      <div className="w-full py-12">
+      <div id="testimonies" className="w-full py-12 px-4 md:px-12">
         <h2 className="text-xl font-bold text-center mb-6">Testimonials</h2>
-        <div className="flex justify-center space-x-6">
+        <div className="flex flex-col md:flex-row md:justify-center md:space-x-6">
           {displayedTestimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white p-6 rounded shadow-lg text-center">
+            <div key={index} className="bg-white p-6 rounded shadow-lg text-center mb-6 md:mb-0 md:w-1/3">
               <div className="rounded-full border border-gray-300 p-2 flex items-center justify-center">
                 <img src={testimonial.image} alt={`${testimonial.name}'s photo`} className="rounded-full object-cover"/>
               </div>
@@ -107,7 +123,7 @@ const ResourcesPage = () => {
       </div>
      
       {/* Sermons Section */}
-      <div className="w-full py-12 px-4 md:px-12">
+      <div id="sermons" className="w-full py-12 px-4 md:px-12">
         <h2 className="text-xl font-bold text-center mb-6">Sermons</h2>
         <div className="w-full mb-8 mx-auto md:px-12 lg:px-20">
           <div className="flex flex-col md:flex-row justify-center md:space-x-8 h-full">
@@ -139,11 +155,11 @@ const ResourcesPage = () => {
       </div>
 
       {/* Merchandise Section */}
-      <div className="w-full py-12">
+      <div className="w-full py-12 px-4 md:px-12">
         <h2 className="text-xl font-bold text-center mb-6">Merchandise</h2>
-        <div className="flex justify-center space-x-6">
+        <div className="flex flex-col md:flex-row md:justify-center md:space-x-6">
           {displayedMerchandise.map((item, index) => (
-            <div key={index} className="bg-white p-6 rounded shadow-lg text-center">
+            <div key={index} className="bg-white p-6 rounded shadow-lg text-center mb-6 md:mb-0 md:w-1/3">
               <img src={item.image} alt={item.title} className="mb-4" />
               <div>{item.title}</div>
             </div>
