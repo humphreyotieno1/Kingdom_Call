@@ -53,7 +53,7 @@ const DepartmentsPage = () => {
 
     const carouselItems = [
         {
-            image: "/music.jpg",
+            image: "/worship.jpg",
             title: "Music and Dance Ministry",
         },
         {
@@ -106,6 +106,9 @@ const DepartmentsPage = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        pauseOnHover: true,
         nextArrow: <NextArrow/>,
         prevArrow: <PreviousArrow/>,
     };
@@ -173,7 +176,7 @@ const DepartmentsPage = () => {
                 <Slider {...settings}>
                     {carouselItems.map((item, index) => (
                         <div key={index} className="px-2">
-                            <img src={item.image} alt={`carousel-item-${index}`} className="w-full h-auto rounded" />
+                            <img src={item.image} alt={`carousel-item-${index}`} className="w-full h-82 object-cover rounded" />
                             <div className="p-4 text-center">
                                 <h3 className="text-xl font-bold">{item.title}</h3>
                             </div>

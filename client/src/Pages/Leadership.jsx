@@ -40,38 +40,35 @@ const LeadershipPage = () => {
       <div className="w-full py-4 bg-[linear-gradient(180deg,#e48515,#ebebeb)] py-10">
         <h1 className="text-3xl font-bold text-black mt-20 mb-2 text-center py-4">Leadership</h1>
       </div>
-      {/* Main Leader Card */}
-      <div className="w-full max-w-xs mb-8 border-2 border-[#E48515] p-8 rounded-lg bg-[#e7e2d9]">
-        <div className="border rounded-lg overflow-hidden shadow-lg">
-          <img src={leaders[0].image} alt={leaders[0].title} className="w-full h-auto" />
-          <div className="p-4 text-center">
-            <h3 className="text-xl font-bold">{leaders[0].title}</h3>
-            <p className="text-gray-700">{leaders[0].description}</p>
+
+      {/* Flex container for Vision Bearer and other leaders */}
+      <div className="flex flex-col lg:flex-row w-full max-w-6xl px-4 sm:px-0 justify-between gap-8">
+
+        {/* Vision Bearer Card */}
+        <div className="w-full lg:w-1/3 mb-8 border-2 border-[#E48515] p-8 rounded-lg bg-[#e7e2d9]">
+          <div className="border rounded-lg overflow-hidden shadow-lg">
+            <img src={leaders[0].image} alt={leaders[0].title} className="w-full h-auto" />
+            <div className="p-4 text-center">
+              <h3 className="text-xl font-bold">{leaders[0].title}</h3>
+              <p className="text-gray-700">{leaders[0].description}</p>
+            </div>
           </div>
         </div>
-      </div>
-      {/* Other Leaders Cards */}
-      <div className="w-full max-w-6xl px-4 sm:px-0 border-2 border-[#E48515] p-8 rounded-lg bg-[#e7e2d9]">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          {otherLeaders.slice(0, 4).map((leader, index) => (
-            <div key={index} className="border rounded-lg overflow-hidden shadow-lg">
-              <img src={leader.image} alt={leader.title} className="w-full h-auto" />
-              <div className="p-4 text-center">
-                <h3 className="text-xl font-bold">{leader.title}</h3>
+
+        {/* Other Leaders Cards */}
+        <div className="w-full lg:w-2/3 border-2 border-[#E48515] p-8 rounded-lg bg-[#e7e2d9]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {otherLeaders.map((leader, index) => (
+              <div key={index} className="border rounded-lg overflow-hidden shadow-lg">
+                <img src={leader.image} alt={leader.title} className="w-full h-auto" />
+                <div className="p-4 text-center">
+                  <h3 className="text-xl font-bold">{leader.title}</h3>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-        <div className="flex justify-center gap-8">
-          {otherLeaders.slice(4).map((leader, index) => (
-            <div key={index} className="border rounded-lg overflow-hidden shadow-lg w-full sm:w-1/2 lg:w-1/4">
-              <img src={leader.image} alt={leader.title} className="w-full h-auto" />
-              <div className="p-4 text-center">
-                <h3 className="text-xl font-bold">{leader.title}</h3>
-              </div>
-            </div>
-          ))}
-        </div>
+
       </div>
     </div>
   );
