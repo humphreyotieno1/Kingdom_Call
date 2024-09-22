@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram, faTelegram, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faInstagram, faTelegram, faYoutube, faTiktok } from '@fortawesome/free-brands-svg-icons';
 import { faArrowUp, faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => {
@@ -11,10 +11,11 @@ const Footer = () => {
           <h2 className="text-2xl font-bold">Kingdom Call</h2>
           <p className="text-sm mt-2 text-center">Your kingdom come...Your will be done.</p>
           <div className="flex mt-4 space-x-4">
-            <a href="#" className="text-white"><FontAwesomeIcon icon={faFacebook} className="text-2xl" /></a>
-            <a href="#" className="text-white"><FontAwesomeIcon icon={faInstagram} className="text-2xl" /></a>
-            <a href="#" className="text-white"><FontAwesomeIcon icon={faTelegram} className="text-2xl" /></a>
-            <a href="#" className="text-white"><FontAwesomeIcon icon={faYoutube} className="text-2xl" /></a>
+            <a href="https://www.facebook.com/profile.php?id=100093344746726" className="text-white" target="_blank"><FontAwesomeIcon icon={faFacebook} className="text-2xl" /></a>
+            <a href="https://instagram.com/kingdom_call?igshid=OGQ5ZDc2ODk2ZA==" className="text-white" target="_blank"><FontAwesomeIcon icon={faInstagram} className="text-2xl" /></a>
+            <a href="https://t.me/deeperinGod" className="text-white" target="_blank"><FontAwesomeIcon icon={faTelegram} className="text-2xl" /></a>
+            <a href="https://www.youtube.com/@WeareKingdomCall" className="text-white" target="_blank"><FontAwesomeIcon icon={faYoutube} className="text-2xl" /></a>
+            <a href="https://vm.tiktok.com/ZM27wmfPk/" class name="text-white" target="_blank"><FontAwesomeIcon icon={faTiktok} className="text-2xl" /></a>
           </div>
         </div>
         <div className="flex flex-col items-center">

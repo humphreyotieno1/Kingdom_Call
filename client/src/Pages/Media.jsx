@@ -1,9 +1,76 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-const MediaPage = () => {
+const Media = () => {
+  // Sample data for sneak peeks
+  const sampleVideos = [
+    {
+      title: 'THY WILL BE DONE',
+      description: 'The will of God in our lives.',
+      thumbnail: '/audience2.jpg'
+    },
+    {
+      title: 'Leaders Retreat',
+      description: 'A retreat for leaders in the ministry.',
+      thumbnail: 'retreat.jpg'
+    },
+    {
+      title: 'The Love of a Father',
+      description: 'A message on the love of God.',
+      thumbnail: '/services.jpg'
+    },
+    {
+      title: 'AS IT IS IN HEAVEN',
+      description: 'The kingdom of God.',
+      thumbnail: 'team.jpg'
+    }
+  ];
+
+  const sampleGallery = [
+    {
+      title: 'Gallery Image 1',
+      src: 'session1.jpg'
+    },
+    {
+      title: 'Gallery Image 2',
+      src: 'meeting.jpg'
+    },
+    {
+      title: 'Gallery Image 3',
+      src: 'audience3.jpg'
+    },
+    {
+      title: 'Gallery Image 4',
+      src: 'prayer.jpg'
+    }
+  ];
+
+  const sampleLiveSessions = [
+    {
+      title: 'Holy Ghost Encounter',
+      description: 'A live session on the Holy Ghost.',
+      date: 'March 4, 2023'
+    },
+    {
+      title: 'Beauty of Holiness',
+      description: 'A session on the beauty of holiness.',
+      date: 'July 28, 2023'
+    },
+    {
+      title: 'THY WILL BE DONE',
+      description: 'A session on the will of God.',
+      date: 'March 4, 2024'
+    },
+    {
+      title: 'AS IT IS IN HEAVEN',
+      description: 'A session on the kingdom of God.',
+      date: 'July 28, 2024'
+    }
+  ];
+
   return (
     <div className="media-page">
-      
+
       {/* Heading Section */}
       <div className="w-full bg-[linear-gradient(180deg,#e48515,#ebebeb)] py-10">
         <h1 className="text-3xl md:text-4xl font-bold text-black mt-20 mb-2 text-center py-4">
@@ -11,143 +78,82 @@ const MediaPage = () => {
         </h1>
       </div>
 
-      {/* Videos Section */}
-      <div className="videos-section py-10">
-        <div className="container mx-auto px-4">
-          
+      {/* Navigation Links */}
+      <div className="text-center py-4 bg-gray-100">
+        <NavLink
+          to="/media/videos"
+          className="px-4 py-2 mx-2 bg-[#E48515] text-white font-bold rounded-full hover:bg-[#d37712] transition-colors"
+        >
+          Videos
+        </NavLink>
+        <NavLink
+          to="/media/gallery"
+          className="px-4 py-2 mx-2 bg-[#E48515] text-white font-bold rounded-full hover:bg-[#d37712] transition-colors"
+        >
+          Gallery
+        </NavLink>
+        <NavLink
+          to="/media/live-sessions"
+          className="px-4 py-2 mx-2 bg-[#E48515] text-white font-bold rounded-full hover:bg-[#d37712] transition-colors"
+        >
+          Live Sessions
+        </NavLink>
+      </div>
+
+      {/* Sneak Peek Section */}
+      <div className="container mx-auto py-10 px-4 lg:px-0">
+
+        {/* Videos Preview */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold mb-6 text-center md:text-left">Videos Preview</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {/* Embedding the same video in each iframe */}
-            <iframe 
-              width="560" 
-              height="315" 
-              src="https://www.youtube.com/embed/tx_dMT4vaWI?si=dkVLEhSwIKIEHxi6" 
-              title="YouTube video player" 
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              referrerPolicy="strict-origin-when-cross-origin" 
-              allowFullScreen
-              className="w-full h-64 md:h-80 lg:h-96"
-            ></iframe>
-            <iframe 
-              width="560" 
-              height="315" 
-              src="https://www.youtube.com/embed/zU4gUUTJUVs?si=nYHwhKNbI1Nadhmt" 
-              title="YouTube video player" 
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              referrerPolicy="strict-origin-when-cross-origin" 
-              allowFullScreen
-              className="w-full h-64 md:h-80 lg:h-96"
-            ></iframe>
-            <iframe 
-              width="560" 
-              height="315" 
-              src="https://www.youtube.com/embed/6YKY9LGqSYw?si=R5ZYb0wYufZgoCYM" 
-              title="YouTube video player" 
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              referrerPolicy="strict-origin-when-cross-origin" 
-              allowFullScreen
-              className="w-full h-64 md:h-80 lg:h-96"
-            ></iframe>
-            <iframe 
-              width="560" 
-              height="315" 
-              src="https://www.youtube.com/embed/x-FzcPftJ9A?si=Rl0hYL--Al2CPHor" 
-              title="YouTube video player" 
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              referrerPolicy="strict-origin-when-cross-origin" 
-              allowFullScreen
-              className="w-full h-64 md:h-80 lg:h-96"
-            ></iframe>
-            <iframe 
-              width="560" 
-              height="315" 
-              src="https://www.youtube.com/embed/VpBMRXUwXIk?si=uAB0j_YPnOPIesBX" 
-              title="YouTube video player" 
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              referrerPolicy="strict-origin-when-cross-origin" 
-              allowFullScreen
-              className="w-full h-64 md:h-80 lg:h-96"
-            ></iframe>
-            <iframe 
-              width="560" 
-              height="315" 
-              src="https://www.youtube.com/embed/n5cdXPmnf8w?si=UYW95MHfp24JO7FH" 
-              title="YouTube video player" 
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              referrerPolicy="strict-origin-when-cross-origin" 
-              allowFullScreen
-              className="w-full h-64 md:h-80 lg:h-96"
-            ></iframe>
-          </div>
-          <div className="text-center mt-8">
-            <a href="https://www.youtube.com/@WeareKingdomCall" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-[#E48515] text-white font-bold rounded-full">
-              View More
-            </a>
+            {sampleVideos.map((video, index) => (
+              <div key={index} className="bg-white shadow-md p-4 rounded-lg hover:shadow-xl transition-shadow">
+                <img
+                  src={video.thumbnail}
+                  alt={video.title}
+                  className="w-full h-48 object-cover mb-4 rounded-md"
+                />
+                <h3 className="text-lg font-semibold">{video.title}</h3>
+                <p className="text-gray-600">{video.description}</p>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
 
-      {/* Gallery Section */}
-      <div className="gallery-section py-10 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">Gallery</h2>
-          <div className="filter-options text-center mb-6">
-            <button className="px-4 py-2 mx-2 bg-[#E48515] text-white font-bold rounded-full">All</button>
-            <button className="px-4 py-2 mx-2 bg-[#E48515] text-white font-bold rounded-full">Sessions</button>
-            <button className="px-4 py-2 mx-2 bg-[#E48515] text-white font-bold rounded-full">Hangouts</button>
-            {/* Add more filter buttons as needed */}
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {/* Replace these divs with actual image components */}
-            <div className="gallery-image bg-gray-300 h-40 md:h-48 lg:h-56"></div>
-            <div className="gallery-image bg-gray-300 h-40 md:h-48 lg:h-56"></div>
-            <div className="gallery-image bg-gray-300 h-40 md:h-48 lg:h-56"></div>
-            <div className="gallery-image bg-gray-300 h-40 md:h-48 lg:h-56"></div>
-            <div className="gallery-image bg-gray-300 h-40 md:h-48 lg:h-56"></div>
-            <div className="gallery-image bg-gray-300 h-40 md:h-48 lg:h-56"></div>
-            <div className="gallery-image bg-gray-300 h-40 md:h-48 lg:h-56"></div>
-            <div className="gallery-image bg-gray-300 h-40 md:h-48 lg:h-56"></div>
-            <div className="gallery-image bg-gray-300 h-40 md:h-48 lg:h-56"></div>
-            <div className="gallery-image bg-gray-300 h-40 md:h-48 lg:h-56"></div>
-            <div className="gallery-image bg-gray-300 h-40 md:h-48 lg:h-56"></div>
-            <div className="gallery-image bg-gray-300 h-40 md:h-48 lg:h-56"></div>
-          </div>
-          {/* Pagination buttons or component */}
-          <div className="pagination mt-8 text-center">
-            <button className="px-4 py-2 mx-2 bg-[#E48515] text-white font-bold rounded-full">Previous</button>
-            <button className="px-4 py-2 mx-2 bg-[#E48515] text-white font-bold rounded-full">Next</button>
+        {/* Gallery Preview */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold mb-6 text-center md:text-left">Gallery Preview</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            {sampleGallery.map((image, index) => (
+              <div key={index} className="bg-white shadow-md p-4 rounded-lg hover:shadow-xl transition-shadow">
+                <img
+                  src={image.src}
+                  alt={image.title}
+                  className="w-full h-32 sm:h-40 md:h-48 object-cover rounded-md"
+                />
+              </div>
+            ))}
           </div>
         </div>
-      </div>
 
-      {/* Live Sessions Section */}
-      <div className="live-sessions-section py-10 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">Live Sessions</h2>
-          <div className="live-video-embed">
-            {/* Embed the specific YouTube video */}
-            <iframe 
-              width="560" 
-              height="315" 
-              src="https://www.youtube.com/embed/dlcu04ghbC4?si=-5TX7uW2uKt-ZD7a" 
-              title="YouTube video player" 
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              referrerPolicy="strict-origin-when-cross-origin" 
-              allowFullScreen
-              className="w-full h-64 md:h-80 lg:h-96"
-            ></iframe>
+        {/* Live Sessions Preview */}
+        <div>
+          <h2 className="text-2xl font-bold mb-6 text-center md:text-left">Live Sessions Preview</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {sampleLiveSessions.map((session, index) => (
+              <div key={index} className="bg-white shadow-md p-4 rounded-lg hover:shadow-xl transition-shadow">
+                <h3 className="text-lg font-semibold">{session.title}</h3>
+                <p className="text-gray-600">{session.description}</p>
+                <p className="text-sm text-gray-500 mt-2">{session.date}</p>
+              </div>
+            ))}
           </div>
         </div>
+
       </div>
-      
     </div>
   );
 };
 
-export default MediaPage;
+export default Media;
