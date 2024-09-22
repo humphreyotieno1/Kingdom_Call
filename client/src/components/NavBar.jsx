@@ -95,9 +95,9 @@ const NavBar = () => {
             </Link>
             <div className={`absolute left-0 ${isResourceDropdownOpen ? 'block' : 'hidden'} border border-[#e48515] bg-[#e48515] rounded`}>
               <div className="mt-2 text-sm text-gray-700 dark:text-gray-400 ">
-                <Link to="/resources?section=testimonies" className="block px-4 py-2 hover:bg-[#C46F12] text-white w-full text-left rounded">Testimonies</Link>
+                {/*<Link to="/resources?section=testimonies" className="block px-4 py-2 hover:bg-[#C46F12] text-white w-full text-left rounded">Testimonies</Link>
                 <Link to="/resources?section=sermons" className="block px-4 py-2 hover:bg-[#C46F12] text-white w-full text-left rounded">Sermons</Link>
-                <Link to="/stories" className="block px-4 py-2 hover:bg-[#C46F12] text-white w-full text-left rounded">Stories</Link>
+                <Link to="/resources?section=merch" className="block px-4 py-2 hover:bg-[#C46F12] text-white w-full text-left rounded">Merchanise</Link>*/}
                 <Link to="resources/prayer-request" className="block px-4 py-2 hover:bg-[#C46F12] text-white w-full text-left rounded">Prayer Requests</Link>
                 <Link to="/contact" className="block px-4 py-2 hover:bg-[#C46F12] text-white w-full text-left rounded">Get Help</Link>
               </div>
