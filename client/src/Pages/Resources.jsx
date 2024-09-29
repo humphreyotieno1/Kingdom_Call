@@ -1,177 +1,129 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Pagination from "../components/pagination";
+import { gapi } from "gapi-script";
 
 const ResourcesPage = () => {
-  const [currentTestimonialPage, setCurrentTestimonialPage] = useState(0);
-  const [currentMerchPage, setCurrentMerchPage] = useState(0);
-  const testimonialsPerPage = 3;
-  const merchandisePerPage = 4;
+  const [resources, setResources] = useState([]);
   const [expanded, setExpanded] = useState(false); // To toggle expanded/collapsed view
-
-  const testimonials = [
-    { name: "Adam Smith", image: "./path.jpeg", quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", designation: "Designation" },
-    { name: "Ciara Martin", image: "./path.jpeg", quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", designation: "Designation" },
-    { name: "Edward James", image: "./path.jpeg", quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", designation: "Designation" },
-    { name: "Brian Smith", image: "./path.jpeg", quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", designation: "Designation" },
-    { name: "Leonard Martin", image: "./path.jpeg", quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", designation: "Designation" },
-    { name: "Eric James", image: "./path.jpeg", quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", designation: "Designation" },
-  ];
-
-  const merchandise = [
-    { title: "product 1", image: "./path.jpeg" },
-    { title: "product 2", image: "./path.jpeg" },
-    { title: "product 3", image: "./path.jpeg" },
-    { title: "product 4", image: "./path.jpeg" },
-    { title: "product 5", image: "./path.jpeg" },
-    { title: "product 6", image: "./path.jpeg" },
-    { title: "product 7", image: "./path.jpeg" },
-    { title: "product 8", image: "./path.jpeg" },
-  ];
-
-  const totalPagesTestimonials = Math.ceil(testimonials.length / testimonialsPerPage);
-  const totalPagesMerchandise = Math.ceil(merchandise.length / merchandisePerPage);
-
-  const displayedTestimonials = testimonials.slice(
-    currentTestimonialPage * testimonialsPerPage,
-    currentTestimonialPage * testimonialsPerPage + testimonialsPerPage
-  );
-
-  const displayedMerchandise = merchandise.slice(
-    currentMerchPage * merchandisePerPage,
-    currentMerchPage * merchandisePerPage + merchandisePerPage
-  );
-
   const [openAccordion, setOpenAccordion] = useState(null);
+
+  // Google API Client ID and API key from your project
+  const CLIENT_ID = "860488847873-c5q3ob6qgjqmq8bg6lhglg1idsc09nj5.apps.googleusercontent.com";
+  const API_KEY = "AIzaSyA0c8mkGFqYgJmi_HX0BpleJdPm0afj9LE";
+  const FOLDER_ID = "14nCYghkuChp1dqT7c3WvcGdkfyBTmAhb";
+  const DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"];
+  const SCOPES = "https://www.googleapis.com/auth/drive.readonly";
+
+  useEffect(() => {
+    const fetchData = async () => {
+      function start() {
+        gapi.client
+          .init({
+            apiKey: API_KEY,
+            clientId: CLIENT_ID,
+            discoveryDocs: DISCOVERY_DOCS,
+            scope: SCOPES,
+          })
+          .then(() => {
+            return gapi.client.drive.files.list({
+              q: `'${FOLDER_ID}' in parents`,
+              fields: "nextPageToken, files(id, name, mimeType, webViewLink, webContentLink)",
+            });
+          })
+          .then((response) => {
+            const files = response.result.files;
+            setResources(files);
+          })
+          .catch((error) => {
+            console.error("Error fetching files", error);
+          });
+      }
+      gapi.load("client:auth2", start);
+    };
+
+    fetchData();
+  }, []);
 
   const toggleAccordion = (index) => {
     setOpenAccordion(openAccordion === index ? null : index);
   };
 
-  const sermons = [
-    { title: "Sermon 1", content: "Detailed explanation of Sermon 1...", file: "sermon1.pdf" },
-    { title: "Sermon 2", content: "Detailed explanation of Sermon 2...", file: "sermon2.pdf" },
-    { title: "Sermon 3", content: "Detailed explanation of Sermon 3...", file: "sermon3.pdf" },
-    { title: "Sermon 4", content: "Detailed explanation of Sermon 4...", file: "sermon4.pdf" },
-    { title: "Sermon 5", content: "Detailed explanation of Sermon 5...", file: "sermon5.pdf" },
-  ];
-
-  const visibleSermons = expanded ? sermons : sermons.slice(0, 3);
-
-  useEffect(() => {
-    const url = new URL(window.location.href);
-    const section = url.searchParams.get('section');
-    if (section) {
-      scrollToSection(section);
-    }
-  }, []);
-
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const visibleResources = expanded ? resources : resources.slice(0, 3);
 
   return (
     <div className="flex flex-col items-center justify-center bg-[#ebebeb]">
       {/* Resources Header */}
       <div className="w-full bg-gradient-to-b from-[#e48515] to-[#ebebeb] py-10">
         <h1 className="text-3xl font-bold text-black mt-20 mb-2 text-center py-4">
-          Resources
+          Kingdom Call Resources
         </h1>
       </div>
 
-      {/* Testimonials Section */}
-      <div id="testimonies" className="w-full py-12 px-4 md:px-12">
-        <h2 className="text-xl font-bold text-center mb-6">Testimonials</h2>
-        <div className="flex flex-col md:flex-row md:justify-center md:space-x-6">
-          {displayedTestimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white p-6 rounded shadow-lg text-center mb-6 md:mb-0 md:w-1/3">
-              <div className="rounded-full border border-gray-300 p-2 flex items-center justify-center">
-                <img src={testimonial.image} alt={`${testimonial.name}'s photo`} className="rounded-full object-cover"/>
-              </div>
-              <div className="text-sm text-gray-600 mt-4">"{testimonial.quote}"</div>
-              <div className="mt-4 text-gray-900 font-bold">{testimonial.name}</div>
-              <div className="text-sm text-gray-500">{testimonial.designation}</div>
-            </div>
-          ))}
-        </div>
-
-        {/* Pagination Controls */}
-        <Pagination 
-          totalPages={totalPagesTestimonials} 
-          currentPage={currentTestimonialPage} 
-          onPageChange={setCurrentTestimonialPage} 
-          type="radio" // Use radio buttons for testimonials
-        />
-      </div>
-     
-      {/* Sermons Section */}
-      <div id="sermons" className="w-full py-12 px-4 md:px-12">
-        <h2 className="text-xl font-bold text-center mb-6">Sermons</h2>
+      {/* Resources Section */}
+      <div id="resources" className="w-full py-12 px-4 md:px-12">
+        <h2 className="text-xl font-bold text-center mb-6">Available Resources</h2>
         <div className="w-full mb-8 mx-auto md:px-12 lg:px-20">
-          <div className="flex flex-col md:flex-row justify-center md:space-x-8 h-full">
-            <div className="bg-gray-300 w-full md:w-1/2 order-1 md:order-1">
-              <img src="./sermon.jpg" alt="sermons image" />
-            </div>
-            <div className="w-full md:w-1/2 order-2 md:order-2 rounded shadow-lg">
-              <div className="space-y-2">
-                {visibleSermons.map((sermon, index) => (
-                  <div key={index} className="border border-gray-200 rounded">
-                    <button
-                      className="w-full text-left p-4 flex justify-start items-center focus:outline-none"
-                      onClick={() => toggleAccordion(index)}
-                    >
-                      <span className="text-xl mr-4">
-                        {openAccordion === index ? "-" : "+"}
-                      </span>
-                      <span>{sermon.title}</span>
-                    </button>
-                    {openAccordion === index && (
-                      <div className="p-4 bg-gray-50">
-                        <p>{sermon.content}</p>
-                        <a
-                          href={`./files/${sermon.file}`} 
-                          download 
-                          className="text-blue-500 underline mt-2"
-                        >
-                          Download PDF
-                        </a>
-                      </div>
-                    )}
-                  </div>
-                ))}
-                {sermons.length > 3 && (
+          <div className="space-y-2">
+            {visibleResources.length > 0 ? (
+              visibleResources.map((resource, index) => (
+                <div key={resource.id} className="border border-gray-200 rounded">
                   <button
-                    className="w-full text-center p-4 mt-4 bg-gray-200 rounded"
-                    onClick={() => setExpanded(!expanded)}
+                    className="w-full text-left p-4 flex justify-start items-center focus:outline-none"
+                    onClick={() => toggleAccordion(index)}
                   >
-                    {expanded ? "Show Less" : "Show More"}
+                    <span className="text-xl mr-4">
+                      {openAccordion === index ? "-" : "+"}
+                    </span>
+                    <span>{resource.name}</span>
                   </button>
-                )}
-              </div>
-            </div>
+                  {openAccordion === index && (
+                    <div className="p-4 bg-gray-50">
+                      <a
+                        href={resource.webViewLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-500 underline mt-2"
+                      >
+                        View or Download
+                      </a>
+                    </div>
+                  )}
+                </div>
+              ))
+            ) : (
+              <p>No resources found in the folder.</p>
+            )}
+            {resources.length > 3 && (
+              <button
+                className="w-full text-center p-4 mt-4 bg-gray-200 rounded"
+                onClick={() => setExpanded(!expanded)}
+              >
+                {expanded ? "Show Less" : "Show More"}
+              </button>
+            )}
           </div>
         </div>
       </div>
 
       {/* Merchandise Section */}
-      <div id="merch" className="w-full py-12 px-4 md:px-12">
-        <h2 className="text-xl font-bold text-center mb-6">Merchandise</h2>
-        <div className="flex flex-col md:flex-row md:justify-center md:space-x-6">
-          {displayedMerchandise.map((item, index) => (
-            <div key={index} className="bg-white p-6 rounded shadow-lg text-center mb-6 md:mb-0 md:w-1/3">
-              <img src={item.image} alt={item.title} className="mb-4" />
-              <div>{item.title}</div>
-            </div>
-          ))}
+      <div id="merchandise" className="w-full py-12 px-4 md:px-12 bg-white">
+        <h2 className="text-xl font-bold text-center mb-6">Kingdom Call Merchandise</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Add merchandise items here */}
+          <div className="p-6 border rounded-md shadow-sm bg-gray-100">
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Merchandise Item"
+              className="w-full h-48 object-cover mb-4"
+            />
+            <h3 className="text-lg font-semibold mb-2">T-Shirt</h3>
+            <p className="mb-4">Kingdom Call branded T-shirt, available in multiple colors.</p>
+            <button className="bg-[#e48515] text-white px-4 py-2 rounded-md">
+              Buy Now
+            </button>
+          </div>
+          {/* Repeat the above block for other merchandise items */}
         </div>
-        <Pagination 
-          totalPages={totalPagesMerchandise} 
-          currentPage={currentMerchPage} 
-          onPageChange={setCurrentMerchPage} 
-          type="bracketDots" // Use angle brackets with dots for merchandise
-        />
       </div>
     </div>
   );
