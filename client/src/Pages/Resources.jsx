@@ -9,7 +9,7 @@ const ResourcesPage = () => {
 
   // Google API Client ID and API key from your project
   const CLIENT_ID = "860488847873-c5q3ob6qgjqmq8bg6lhglg1idsc09nj5.apps.googleusercontent.com";
-  const API_KEY = "AIzaSyA0c8mkGFqYgJmi_HX0BpleJdPm0afj9LE";
+  const API_KEY = import.meta.env.VITE_API_KEY;
   const FOLDER_ID = "14nCYghkuChp1dqT7c3WvcGdkfyBTmAhb";
   const DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"];
   const SCOPES = "https://www.googleapis.com/auth/drive.readonly";
