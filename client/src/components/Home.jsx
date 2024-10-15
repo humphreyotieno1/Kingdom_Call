@@ -6,7 +6,6 @@ import "../index.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPersonPraying, faHandshake, faBook, faFire, faEarListen } from '@fortawesome/free-solid-svg-icons';
 
-
 // Custom Next Arrow
 const NextArrow = ({ onClick }) => (
     <div
@@ -66,7 +65,12 @@ const Home = () => {
                 <Slider {...carouselSettings} className="w-full h-full">
                     {overlayTexts.map((text, index) => (
                         <div key={index} className="relative w-full h-[95vh]">
-                            <img src={`./carousel/pic${index + 1}.jpg`} alt={`Carousel ${index + 1}`} className="w-full h-full object-cover" />
+                            <img
+                                src={`./carousel/pic${index + 1}.jpg`}
+                                alt={`Carousel ${index + 1}`}
+                                className="w-full h-full object-cover"
+                                loading="lazy"
+                            />
                             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
                                 <h2 className="text-xl md:text-3xlHumphrey font-bold text-white text-center px-4 whitespace-pre-line">
                                     {text}
@@ -94,7 +98,7 @@ const Home = () => {
                     </p>
                 </div>
                 <aside className="w-full md:w-[40%] p-4 md:h-[90vh]">
-                    <img src="/welcome.jpg" alt="Leader" className="w-full h-full object-cover rounded-lg animate-fadeInUp" />
+                    <img src="/welcome.jpg" alt="Leader" className="w-full h-full object-cover rounded-lg animate-fadeInUp" loading="lazy" />
                 </aside>
             </section>
 

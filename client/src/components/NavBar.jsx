@@ -95,9 +95,6 @@ const NavBar = () => {
             </Link>
             <div className={`absolute left-0 ${isResourceDropdownOpen ? 'block' : 'hidden'} border border-[#e48515] bg-[#e48515] rounded`}>
               <div className="mt-2 text-sm text-gray-700 dark:text-gray-400 ">
-                {/*<Link to="/resources?section=testimonies" className="block px-4 py-2 hover:bg-[#C46F12] text-white w-full text-left rounded">Testimonies</Link>
-                <Link to="/resources?section=sermons" className="block px-4 py-2 hover:bg-[#C46F12] text-white w-full text-left rounded">Sermons</Link>
-                <Link to="/resources?section=merch" className="block px-4 py-2 hover:bg-[#C46F12] text-white w-full text-left rounded">Merchanise</Link>*/}
                 <Link to="resources/prayer-request" className="block px-4 py-2 hover:bg-[#C46F12] text-white w-full text-left rounded">Prayer Requests</Link>
                 <Link to="/contact" className="block px-4 py-2 hover:bg-[#C46F12] text-white w-full text-left rounded">Get Help</Link>
               </div>
@@ -127,15 +124,16 @@ const NavBar = () => {
           {/* Mobile Menu */}
           {isMenuOpen && (
             <div className="flex flex-col items-start w-full">
-              <Link to="/" className="py-2 px-3 hover:text-gray-700 w-full">Home</Link>
-              <Link to="/about-us" className="py-2 px-3 hover:text-gray-700 w-full">About Us</Link>
-              <Link to="/services" className="py-2 px-3 hover:text-gray-700 w-full">Services</Link>
-              <Link to="/departments" className="py-2 px-3 hover:text-gray-700 w-full">Departments</Link>
+              <Link to="/" className="py-2 px-3 hover:text-gray-700 w-full" onClick={() => setIsMenuOpen(false)}>Home</Link>
+              <Link to="/about-us" className="py-2 px-3 hover:text-gray-700 w-full" onClick={() => setIsMenuOpen(false)}>About Us</Link>
+              <Link to="/services" className="py-2 px-3 hover:text-gray-700 w-full" onClick={() => setIsMenuOpen(false)}>Services</Link>
+              <Link to="/departments" className="py-2 px-3 hover:text-gray-700 w-full" onClick={() => setIsMenuOpen(false)}>Departments</Link>
               
               <button 
                 onClick={() => {
                   navigate('/media')
                   toggleDropdown('mobileMediaDropdown')
+                  setIsMenuOpen(false)
                 }}
                 
                 className="flex items-center py-2 px-3 hover:text-gray-700"
@@ -145,16 +143,18 @@ const NavBar = () => {
                   <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4"/>
                 </svg>
               </button>
+
               <div className={`w-3/4 ${activeDropdown === 'mobileMediaDropdown' ? '' : 'hidden'} flex flex-col space-y-1 ml-4 bg-white text-black rounded`}>
-                <Link to="media/videos" className="block px-4 py-2 hover:bg-gray-200">Videos</Link>
-                <Link to="media/gallery" className="block px-4 py-2 hover:bg-gray-200">Gallery</Link>
-                <Link to="media/live-sessions" className="block px-4 py-2 hover:bg-gray-200">Live Sessions</Link>
+                <Link to="media/videos" className="block px-4 py-2 hover:bg-gray-200" onClick={() => setIsMenuOpen(false)}>Videos</Link>
+                <Link to="media/gallery" className="block px-4 py-2 hover:bg-gray-200" onClick={() => setIsMenuOpen(false)}>Gallery</Link>
+                <Link to="media/live-sessions" className="block px-4 py-2 hover:bg-gray-200" onClick={() => setIsMenuOpen(false)}>Live Sessions</Link>
               </div>
 
               <button 
                 onClick={() => {
                   navigate('/resources')
                   toggleDropdown('mobileResourcesDropdown')
+                  setIsMenuOpen(false)
                 }}
                 className="flex items-center py-2 px-3 hover:text-gray-700"
               >
@@ -164,14 +164,11 @@ const NavBar = () => {
                 </svg>
               </button>
               <div className={`w-3/4 ${activeDropdown === 'mobileResourcesDropdown' ? '' : 'hidden'} flex flex-col space-y-1 ml-4 bg-white text-black rounded`}>
-                <Link to="/resources?section=testimonies" className="block px-4 py-2 hover:bg-gray-200">Testimonies</Link>
-                <Link to="/resources?section=sermons" className="block px-4 py-2 hover:bg-gray-200">Sermons</Link>
-                <Link to="/stories" className="block px-4 py-2 hover:bg-gray-200">Stories</Link>
-                <Link to="/prayer-requests" className="block px-4 py-2 hover:bg-gray-200">Prayer Requests</Link>
-                <Link to="/contact" className="block px-4 py-2 hover:bg-gray-200">Get Help</Link>
+                <Link to="/prayer-requests" className="block px-4 py-2 hover:bg-gray-200" onClick={() => setIsMenuOpen(false)}>Prayer Requests</Link>
+                <Link to="/contact" className="block px-4 py-2 hover:bg-gray-200" onClick={() => setIsMenuOpen(false)}>Get Help</Link>
               </div>
 
-              <Link to="/contact" className="py-2 px-3 hover:text-gray-700 w-full">Contact</Link>
+              <Link to="/contact" className="py-2 px-3 hover:text-gray-700 w-full" onClick={() => setIsMenuOpen(false)}>Contact</Link>
               <div className="py-2 px-4 text-xs text-center text-gray-500">
                © 2024 Kingdom Call All Rights Reserved Co.
              </div>
