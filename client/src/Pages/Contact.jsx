@@ -1,9 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ContactUsPage = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    message: ''
+  });
+
+  const [formStatus, setFormStatus] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  // Handle input change
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setFormStatus(null); // Reset form status before new submission
+
+    try {
+      const response = await fetch('http://localhost:5000/v1/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setFormStatus('Email sent successfully!');
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          message: ''
+        });
+      } else {
+        setFormStatus('Failed to send email. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setFormStatus('An error occurred. Please try again.');
+    }
+
+    setLoading(false);
+  };
+
   return (
     <div className="flex flex-col items-center justify-center py-12 bg-[#ebebeb]">
-      <div className="w-full py-4 bg-[linear-gradient(180deg,#e48515,#ebebeb)] py-10">
+      <div className="w-full py-4 bg-[linear-gradient(180deg,#e48515,#ebebeb)]">
         <h1 className="text-3xl font-bold text-black mt-20 mb-2 text-center py-4">Get Help</h1>
       </div>
       <div className="shadow-lg rounded-lg p-8 max-w-4xl w-full">
@@ -35,15 +84,61 @@ const ContactUsPage = () => {
           </div>
           <div className="bg-white p-8 shadow-lg rounded-lg w-full">
             <h2 className="text-2xl font-semibold mb-4">Send a message</h2>
-            <p className="text-md sm:text-sm text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus nulla ut commodo sagittis.</p>
-            <form>
-              <div className="grid grid-cols-2 gap-4 mb-4">
-                <input type="text" placeholder="Name" className="border border-[#E48515] p-2 rounded focus:ring-2 focus:ring-[#E48515] focus:border-transparent text-sm"/>
-                <input type="text" placeholder="Phone number" className="border border-[#E48515] p-2 rounded focus:ring-2 focus:ring-[#E48515] focus:border-transparent text-sm"/>
+            <p className="text-md sm:text-sm text-gray-600 mb-4">
+              Reach out to us for any queries or feedback. We will get back to you as soon as possible.
+            </p>
+
+            {formStatus && (
+              <div
+                className={`mb-4 p-2 rounded text-center ${
+                  formStatus.includes('successfully') ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
+                }`}
+              >
+                {formStatus}
               </div>
-              <input type="email" placeholder="Email" className="border border-[#E48515] p-2 w-full rounded mb-4 focus:ring-2 focus:ring-[#E48515] focus:border-transparent text-sm"/>
-              <textarea placeholder="Your Message..." className="border border-[#E48515] p-2 w-full rounded mb-4 focus:ring-2 focus:ring-[#E48515] focus:border-transparent text-sm"></textarea>
-              <button type="submit" className="bg-gray-700 hover:bg-black hover:text-white transition text-white p-2 rounded w-full">Submit</button>
+            )}
+
+            <form onSubmit={handleSubmit}>
+              <div className="grid grid-cols-2 gap-4 mb-4">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="border border-[#E48515] p-2 rounded focus:ring-2 focus:ring-[#E48515] focus:border-transparent text-sm"
+                />
+                <input
+                  type="text"
+                  name="phone"
+                  placeholder="Phone number"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="border border-[#E48515] p-2 rounded focus:ring-2 focus:ring-[#E48515] focus:border-transparent text-sm"
+                />
+              </div>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                className="border border-[#E48515] p-2 w-full rounded mb-4 focus:ring-2 focus:ring-[#E48515] focus:border-transparent text-sm"
+              />
+              <textarea
+                name="message"
+                placeholder="Your Message..."
+                value={formData.message}
+                onChange={handleChange}
+                className="border border-[#E48515] p-2 w-full rounded mb-4 focus:ring-2 focus:ring-[#E48515] focus:border-transparent text-sm"
+              ></textarea>
+              <button
+                type="submit"
+                disabled={loading}
+                className="bg-gray-700 hover:bg-black hover:text-white transition text-white p-2 rounded w-full"
+              >
+                {loading ? 'Sending...' : 'Submit'}
+              </button>
             </form>
           </div>
         </div>
