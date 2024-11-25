@@ -6,7 +6,11 @@ const Joi = require('joi'); // Import Joi
 require('dotenv').config();
 
 const app = express();
-app.use(cors());
+const corsOptions = {
+  origin: ['https://kingdom-call.vercel.app/', 'http://localhost:3000'], // Add your frontend domain here
+  methods: ['GET', 'POST'],
+};
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 // Configure nodemailer
