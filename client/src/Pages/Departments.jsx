@@ -145,7 +145,7 @@ const DepartmentsPage = () => {
                 </div>
             </div>
 
-            <div className="flex flex-col md:flex-row gap-4 w-full max-w-6xl mt-8 px-2 md:px-0 mb-8">
+            {/* <div className="flex flex-col md:flex-row gap-4 w-full max-w-6xl mt-8 px-2 md:px-0 mb-8">
                 <div className="w-full md:w-1/2 order-1 md:order-2">
                     <img src="/cell.jpg" alt="CellGroups image" className="w-full h-auto" />
                 </div>
@@ -169,7 +169,7 @@ const DepartmentsPage = () => {
                         ))}
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* Carousel Component */}
             <div className="w-full md:max-w-5xl mt-8 px-4 mb-8">
