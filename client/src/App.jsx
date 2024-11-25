@@ -50,7 +50,7 @@ const App = () => {
 
         {/* Resources */}
         <Route path="/resources" element={<ResourcesPage />} />
-        <Route path="/resources/prayer-request" element={<PrayerRequestPage />} />
+        <Route path="/resources/prayer-requests" element={<PrayerRequestPage />} />
 
         {/* Contact */}
         <Route path="/contact" element={<ContactUsPage />} />

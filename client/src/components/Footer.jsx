@@ -15,7 +15,7 @@ const Footer = () => {
             <a href="https://instagram.com/kingdom_call?igshid=OGQ5ZDc2ODk2ZA==" className="text-white" target="_blank"><FontAwesomeIcon icon={faInstagram} className="text-2xl" /></a>
             <a href="https://t.me/deeperinGod" className="text-white" target="_blank"><FontAwesomeIcon icon={faTelegram} className="text-2xl" /></a>
             <a href="https://www.youtube.com/@WeareKingdomCall" className="text-white" target="_blank"><FontAwesomeIcon icon={faYoutube} className="text-2xl" /></a>
-            <a href="https://vm.tiktok.com/ZM27wmfPk/" class name="text-white" target="_blank"><FontAwesomeIcon icon={faTiktok} className="text-2xl" /></a>
+            <a href="https://vm.tiktok.com/ZM27wmfPk/" className="text-white" target="_blank"><FontAwesomeIcon icon={faTiktok} className="text-2xl" /></a>
           </div>
         </div>
         <div className="flex flex-col items-center">

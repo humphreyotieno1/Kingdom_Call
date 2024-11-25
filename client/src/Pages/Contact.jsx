@@ -7,9 +7,28 @@ const ContactUsPage = () => {
     email: '',
     message: ''
   });
-
+  const [errors, setErrors] = useState({});
   const [formStatus, setFormStatus] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  // Validate inputs locally
+  const validateInputs = () => {
+    const errors = {};
+    if (!formData.name || formData.name.length < 3) {
+      errors.name = 'Name must be at least 3 characters long.';
+    }
+    if (!formData.phone || !/^[0-9]{10,15}$/.test(formData.phone)) {
+      errors.phone = 'Phone must be a valid number (10-15 digits).';
+    }
+    if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
+      errors.email = 'Email must be a valid email address.';
+    }
+    if (!formData.message || formData.message.length < 10) {
+      errors.message = 'Message must be at least 10 characters long.';
+    }
+    setErrors(errors);
+    return Object.keys(errors).length === 0; // Return true if no errors
+  };
 
   // Handle input change
   const handleChange = (e) => {
@@ -19,34 +38,29 @@ const ContactUsPage = () => {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    setFormStatus(null); // Reset form status before new submission
+    setFormStatus(null);
 
+    if (!validateInputs()) return;
+
+    setLoading(true);
     try {
       const response = await fetch('http://localhost:5000/v1/contact', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
         setFormStatus('Email sent successfully!');
-        setFormData({
-          name: '',
-          phone: '',
-          email: '',
-          message: ''
-        });
+        setFormData({ name: '', phone: '', email: '', message: '' });
       } else {
-        setFormStatus('Failed to send email. Please try again.');
+        const errorData = await response.json();
+        setFormStatus(errorData.error || 'Failed to send email. Please try again.');
       }
     } catch (error) {
       console.error('Error:', error);
       setFormStatus('An error occurred. Please try again.');
     }
-
     setLoading(false);
   };
 
@@ -108,6 +122,8 @@ const ContactUsPage = () => {
                   onChange={handleChange}
                   className="border border-[#E48515] p-2 rounded focus:ring-2 focus:ring-[#E48515] focus:border-transparent text-sm"
                 />
+                {errors.name && <p className="text-red-500 text-xs">{errors.name}</p>}
+
                 <input
                   type="text"
                   name="phone"
@@ -116,6 +132,8 @@ const ContactUsPage = () => {
                   onChange={handleChange}
                   className="border border-[#E48515] p-2 rounded focus:ring-2 focus:ring-[#E48515] focus:border-transparent text-sm"
                 />
+                {errors.phone && <p className="text-red-500 text-xs">{errors.phone}</p>}
+
               </div>
               <input
                 type="email"
@@ -125,6 +143,8 @@ const ContactUsPage = () => {
                 onChange={handleChange}
                 className="border border-[#E48515] p-2 w-full rounded mb-4 focus:ring-2 focus:ring-[#E48515] focus:border-transparent text-sm"
               />
+              {errors.email && <p className="text-red-500 text-xs">{errors.email}</p>}
+
               <textarea
                 name="message"
                 placeholder="Your Message..."
@@ -132,9 +152,11 @@ const ContactUsPage = () => {
                 onChange={handleChange}
                 className="border border-[#E48515] p-2 w-full rounded mb-4 focus:ring-2 focus:ring-[#E48515] focus:border-transparent text-sm"
               ></textarea>
+              {errors.message && <p className="text-red-500 text-xs">{errors.message}</p>}
               <button
                 type="submit"
                 disabled={loading}
+                onClick={handleSubmit}
                 className="bg-gray-700 hover:bg-black hover:text-white transition text-white p-2 rounded w-full"
               >
                 {loading ? 'Sending...' : 'Submit'}

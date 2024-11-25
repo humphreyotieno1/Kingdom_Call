@@ -95,7 +95,7 @@ const NavBar = () => {
             </Link>
             <div className={`absolute left-0 ${isResourceDropdownOpen ? 'block' : 'hidden'} border border-[#e48515] bg-[#e48515] rounded`}>
               <div className="mt-2 text-sm text-gray-700 dark:text-gray-400 ">
-                <Link to="resources/prayer-request" className="block px-4 py-2 hover:bg-[#C46F12] text-white w-full text-left rounded">Prayer Requests</Link>
+                <Link to="resources/prayer-requests" className="block px-4 py-2 hover:bg-[#C46F12] text-white w-full text-left rounded">Prayer Requests</Link>
                 <Link to="/contact" className="block px-4 py-2 hover:bg-[#C46F12] text-white w-full text-left rounded">Get Help</Link>
               </div>
             </div>
@@ -164,7 +164,7 @@ const NavBar = () => {
                 </svg>
               </button>
               <div className={`w-3/4 ${activeDropdown === 'mobileResourcesDropdown' ? '' : 'hidden'} flex flex-col space-y-1 ml-4 bg-white text-black rounded`}>
-                <Link to="/prayer-requests" className="block px-4 py-2 hover:bg-gray-200" onClick={() => setIsMenuOpen(false)}>Prayer Requests</Link>
+                <Link to="/resources/prayer-requests" className="block px-4 py-2 hover:bg-gray-200" onClick={() => setIsMenuOpen(false)}>Prayer Requests</Link>
                 <Link to="/contact" className="block px-4 py-2 hover:bg-gray-200" onClick={() => setIsMenuOpen(false)}>Get Help</Link>
               </div>
 
