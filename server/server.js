@@ -7,7 +7,7 @@ require('dotenv').config();
 
 const app = express();
 const corsOptions = {
-  origin: ['https://kingdom-call.vercel.app/', 'http://localhost:3000'], // Add your frontend domain here
+  origin: ['https://kingdom-call.vercel.app/', 'http://localhost:5173'], // Add your frontend domain here
   methods: ['GET', 'POST'],
 };
 app.use(cors(corsOptions));

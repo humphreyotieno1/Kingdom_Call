@@ -10,7 +10,7 @@ const PrayerRequestPage = () => {
   const [errors, setErrors] = useState({});
   const [formStatus, setFormStatus] = useState(null);
   const [loading, setLoading] = useState(false);
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  // const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   // Validate inputs locally
   const validateInputs = () => {
@@ -45,7 +45,7 @@ const PrayerRequestPage = () => {
 
     setLoading(true);
     try {
-      const response = await fetch(`${API_BASE_URL}/v1/contact`, {
+      const response = await fetch(`https://kingdomcallbackend.onrender.com/v1/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
