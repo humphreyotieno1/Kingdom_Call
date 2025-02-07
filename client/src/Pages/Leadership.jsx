@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 const LeadershipPage = () => {
   const leaders = [
@@ -46,9 +45,6 @@ const LeadershipPage = () => {
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div className="mx-auto mb-[60px] max-w-[510px] text-center">
-              {/* <span className="mb-2 block text-5xl font-semibold text-primary">
-                Our Leadership
-              </span> */}
               <h2 className="mb-3 text-xl font-bold leading-[1.2] text-dark dark:text-white sm:text-2xl md:text-[40px]">
                 Meet Our Leaders
               </h2>
@@ -77,11 +73,7 @@ const LeadershipPage = () => {
 const LeadershipCard = ({ imageSrc, name, position }) => {
   return (
     <div className="w-full px-4 md:w-1/2 xl:w-1/4">
-      <motion.div
-        className="mx-auto mb-10 w-full h-80 max-w-[370px] overflow-hidden rounded-lg shadow-lg bg-white dark:bg-dark-2"
-        whileHover={{ scale: 1.05 }}
-        transition={{ duration: 0.3 }}
-      >
+      <div className="mx-auto mb-10 w-full h-80 max-w-[370px] overflow-hidden rounded-lg shadow-lg bg-white dark:bg-dark-2 transition-transform duration-300 hover:scale-105">
         <div className="relative overflow-hidden">
           <img
             src={imageSrc}
@@ -95,7 +87,7 @@ const LeadershipCard = ({ imageSrc, name, position }) => {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };
