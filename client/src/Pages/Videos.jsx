@@ -11,7 +11,7 @@ const Videos = () => {
   ];
 
   return (
-    <div className="videos-page">
+    <div className="videos-page font-lato">
       <div className="w-full bg-[linear-gradient(180deg,#e48515,#ebebeb)] py-10">
         <h1 className="text-3xl md:text-4xl font-bold text-black mt-20 mb-2 text-center py-4">
           Videos

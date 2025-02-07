@@ -1,75 +1,101 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const LeadershipPage = () => {
   const leaders = [
     {
-      title: "Vision Bearer",
-      image: "/media3.jpg",
-      description: "This is the Founder and vision carrier of the whole ministry. He also operates with a team of 6 executives as follows:",
+      name: "Vision Bearer",
+      position: "This is the founder of the whole ministry. He also operates with a team of 6 executives.",
+      imageSrc: "/media3.jpg",
     },
     {
-      title: "Administrator",
-      image: "/path-to-leader1-image.jpg",
+      name: "Administrator",
+      position: "In charge of the day-to-day running of the ministry.",
+      imageSrc: "",
     },
     {
-      title: "Finance Director",
-      image: "/path-to-leader2-image.jpg",
+      name: "General Secretary",
+      position: "In charge of all the secretarial duties of the ministry.",
+      imageSrc: "",
     },
     {
-      title: "General Secretary",
-      image: "/path-to-leader3-image.jpg",
+      name: "Organising Secretary",
+      position: "In charge of all the organizing duties of the ministry.",
+      imageSrc: "",
     },
     {
-      title: "Organizing Secretary",
-      image: "/path-to-leader4-image.jpg",
+      name: "Finance Director",
+      position: "In charge of all the financial duties of the ministry.",
+      imageSrc: "",
     },
     {
-      title: "Overall Departments Head",
-      image: "/path-to-leader5-image.jpg",
+      name: "Overall Dept. Head",
+      position: "In charge of all the departments in the ministry.",
+      imageSrc: "",
     },
     {
-      title: "Overall Cell Groups Head",
-      image: "/path-to-leader6-image.jpg",
-    },
+      name: "Overall Cell Groups Head",
+      position: "In charge of all the cell groups in the ministry.",
+      imageSrc: "",
+    }
   ];
 
-  const otherLeaders = leaders.slice(1);
-
   return (
-    <div className="flex flex-col items-center justify-center py-12 bg-[#ebebeb]">
-      <div className="w-full py-4 bg-[linear-gradient(180deg,#e48515,#ebebeb)] py-10">
-        <h1 className="text-3xl font-bold text-black mt-20 mb-2 text-center py-4">Leadership</h1>
-      </div>
-
-      {/* Flex container for Vision Bearer and other leaders */}
-      <div className="flex flex-col lg:flex-row w-full max-w-6xl px-4 sm:px-0 justify-between gap-8">
-
-        {/* Vision Bearer Card */}
-        <div className="w-full lg:w-1/3 mb-8 border-2 border-[#E48515] p-8 rounded-lg bg-[#e7e2d9]">
-          <div className="border rounded-lg overflow-hidden shadow-lg">
-            <img src={leaders[0].image} alt={leaders[0].title} className="w-full h-auto" />
-            <div className="p-4 text-center">
-              <h3 className="text-xl font-bold">{leaders[0].title}</h3>
-              <p className="text-gray-700">{leaders[0].description}</p>
+    <section className="pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[80px] font-lato" id="#leadership">
+      <div className="container mx-auto">
+        <div className="-mx-4 flex flex-wrap">
+          <div className="w-full px-4">
+            <div className="mx-auto mb-[60px] max-w-[510px] text-center">
+              {/* <span className="mb-2 block text-5xl font-semibold text-primary">
+                Our Leadership
+              </span> */}
+              <h2 className="mb-3 text-xl font-bold leading-[1.2] text-dark dark:text-white sm:text-2xl md:text-[40px]">
+                Meet Our Leaders
+              </h2>
+              <p className="text-base text-body-color dark:text-dark-6">
+                Our leadership team is dedicated to driving innovation and delivering exceptional results.
+              </p>
             </div>
           </div>
         </div>
 
-        {/* Other Leaders Cards */}
-        <div className="w-full lg:w-2/3 border-2 border-[#E48515] p-8 rounded-lg bg-[#e7e2d9]">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {otherLeaders.map((leader, index) => (
-              <div key={index} className="border rounded-lg overflow-hidden shadow-lg">
-                <img src={leader.image} alt={leader.title} className="w-full h-auto" />
-                <div className="p-4 text-center">
-                  <h3 className="text-xl font-bold">{leader.title}</h3>
-                </div>
-              </div>
-            ))}
+        <div className="-mx-4 flex flex-wrap justify-center">
+          {leaders.map((leader, index) => (
+            <LeadershipCard
+              key={index}
+              name={leader.name}
+              position={leader.position}
+              imageSrc={leader.imageSrc}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const LeadershipCard = ({ imageSrc, name, position }) => {
+  return (
+    <div className="w-full px-4 md:w-1/2 xl:w-1/4">
+      <motion.div
+        className="mx-auto mb-10 w-full h-80 max-w-[370px] overflow-hidden rounded-lg shadow-lg bg-white dark:bg-dark-2"
+        whileHover={{ scale: 1.05 }}
+        transition={{ duration: 0.3 }}
+      >
+        <div className="relative overflow-hidden">
+          <img
+            src={imageSrc}
+            alt={name}
+            className="w-full transition-transform duration-300 hover:scale-110"
+          />
+          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 hover:opacity-100">
+            <div className="text-center text-white">
+              <h3 className="text-lg font-bold">{name}</h3>
+              <p className="text-sm">{position}</p>
+            </div>
           </div>
         </div>
-
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const PrayerRequestPage = () => {
+const PrayerRequest = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -66,7 +66,7 @@ const PrayerRequestPage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center bg-[#ebebeb]">
+    <div className="flex flex-col items-center justify-center bg-[#ebebeb] font-lato">
       <div className="w-full bg-gradient-to-b from-[#e48515] to-[#ebebeb] py-10">
         <h1 className="text-3xl font-bold text-black mt-20 mb-2 text-center py-4">
           Prayer Request
@@ -155,4 +155,4 @@ const PrayerRequestPage = () => {
   );
 };
 
-export default PrayerRequestPage;
+export default PrayerRequest;

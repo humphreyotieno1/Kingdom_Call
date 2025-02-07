@@ -2,7 +2,7 @@ import React from 'react';
 
 const LiveSessions = () => {
   return (
-    <div className="live-sessions-page">
+    <div className="live-sessions-page font-lato">
       {/* Header Section */}
       <div className="w-full bg-[linear-gradient(180deg,#e48515,#ebebeb)] py-10">
         <h1 className="text-3xl md:text-4xl font-bold text-black mt-20 mb-2 text-center py-4">
