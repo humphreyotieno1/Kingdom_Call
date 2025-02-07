@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Pagination from "../components/pagination";
 import { gapi } from "gapi-script";
 
-const ResourcesPage = () => {
+const Resources = () => {
   const [resources, setResources] = useState([]);
   const [expanded, setExpanded] = useState(false); // To toggle expanded/collapsed view
   const [openAccordion, setOpenAccordion] = useState(null);
@@ -60,7 +60,7 @@ const ResourcesPage = () => {
       </div>
 
       {/* Resources Section */}
-      <div id="resources" className="w-full py-12 px-4 md:px-12">
+      <div id="resources" className="w-full py-12 px-4 md:px-12 font-lato">
         <h2 className="text-xl font-bold text-center mb-6">Available Resources</h2>
         <div className="w-full mb-8 mx-auto md:px-12 lg:px-20">
           <div className="space-y-2">
@@ -129,4 +129,4 @@ const ResourcesPage = () => {
   );
 };
 
-export default ResourcesPage;
+export default Resources;

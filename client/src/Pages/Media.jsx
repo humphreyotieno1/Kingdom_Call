@@ -69,7 +69,7 @@ const Media = () => {
   ];
 
   return (
-    <div className="media-page">
+    <div className="media-page font-lato">
 
       {/* Heading Section */}
       <div className="w-full bg-[linear-gradient(180deg,#e48515,#ebebeb)] py-10">
@@ -81,19 +81,19 @@ const Media = () => {
       {/* Navigation Links */}
       <div className="text-center py-4 bg-gray-100">
         <NavLink
-          to="/media/videos"
+          to="/videos"
           className="px-4 py-2 mx-2 bg-[#E48515] text-white font-bold rounded-full hover:bg-[#d37712] transition-colors"
         >
           Videos
         </NavLink>
         <NavLink
-          to="/media/gallery"
+          to="/gallery"
           className="px-4 py-2 mx-2 bg-[#E48515] text-white font-bold rounded-full hover:bg-[#d37712] transition-colors"
         >
           Gallery
         </NavLink>
         <NavLink
-          to="/media/live-sessions"
+          to="/live-sessions"
           className="px-4 py-2 mx-2 bg-[#E48515] text-white font-bold rounded-full hover:bg-[#d37712] transition-colors"
         >
           Live Sessions
