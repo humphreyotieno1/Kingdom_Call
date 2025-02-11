@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
@@ -11,18 +12,19 @@ const Contact = () => {
     setFormStatus(null);
   
     try {
-      const response = await fetch('http://localhost:5000/v1/contact', {
+      const response = await fetch('/api/contact', {  // Updated API endpoint
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
   
+      const result = await response.json();
+      
       if (response.ok) {
         setFormStatus('Email submitted successfully!');
         reset();
       } else {
-        const errorData = await response.json();
-        setFormStatus(errorData.error || 'Failed to submit form, please try again.');
+        setFormStatus(result.error || 'Failed to submit form, please try again.');
       }
     } catch (error) {
       console.error('Error:', error);
@@ -46,7 +48,6 @@ const Contact = () => {
 
         <div className="max-w-5xl mx-auto mt-12 sm:mt-16">
           <div className="grid grid-cols-1 gap-6 px-8 text-center md:px-0 md:grid-cols-3">
-            {/* Contact Cards */}
             <ContactCard
               iconPath="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
               text="+254 115 979 303 (office)"
@@ -70,10 +71,11 @@ const Contact = () => {
               {formStatus && (
                 <div
                   aria-live="assertive"
-                  className={`mt-4 mb-6 p-2 rounded text-center ${formStatus.includes("successfully")
+                  className={`mt-4 mb-6 p-2 rounded text-center ${
+                    formStatus.includes("successfully")
                       ? "bg-green-100 text-green-700"
                       : "bg-red-100 text-red-700"
-                    }`}
+                  }`}
                 >
                   {formStatus}
                 </div>

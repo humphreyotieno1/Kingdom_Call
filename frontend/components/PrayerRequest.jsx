@@ -10,20 +10,21 @@ const PrayerRequest = () => {
   const onSubmit = async (data) => {
     setLoading(true);
     setFormStatus(null);
-    
+
     try {
-      const response = await fetch('https://kingdomcallbackend.onrender.com/v1/contact', {
+      const response = await fetch('/api/prayer-request', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
 
+      const result = await response.json();
+
       if (response.ok) {
-        setFormStatus('Email sent successfully!');
+        setFormStatus('Prayer request submitted successfully!');
         reset();
       } else {
-        const errorData = await response.json();
-        setFormStatus(errorData.error || 'Failed to send email. Please try again.');
+        setFormStatus(result.error || 'Failed to submit prayer request. Please try again.');
       }
     } catch (error) {
       console.error('Error:', error);
@@ -59,9 +60,9 @@ const PrayerRequest = () => {
                 <div>
                   <input
                     type="text"
-                    {...register('name', { 
-                      required: 'Name is required', 
-                      minLength: { value: 3, message: 'Name must be at least 3 characters long.' } 
+                    {...register('name', {
+                      required: 'Name is required',
+                      minLength: { value: 3, message: 'Name must be at least 3 characters long.' }
                     })}
                     placeholder="Full Name"
                     className="border border-[#E48515] p-2 rounded focus:ring-2 focus:ring-[#E48515] focus:border-transparent text-sm"
@@ -71,9 +72,9 @@ const PrayerRequest = () => {
                 <div>
                   <input
                     type="text"
-                    {...register('phone', { 
-                      required: 'Phone is required', 
-                      pattern: { value: /^[0-9]{10,15}$/, message: 'Phone must be a valid number (10-15 digits).' } 
+                    {...register('phone', {
+                      required: 'Phone is required',
+                      pattern: { value: /^[0-9]{10,15}$/, message: 'Phone must be a valid number (10-15 digits).' }
                     })}
                     placeholder="Phone number"
                     className="border border-[#E48515] p-2 rounded focus:ring-2 focus:ring-[#E48515] focus:border-transparent text-sm"
@@ -81,13 +82,13 @@ const PrayerRequest = () => {
                   {errors.phone && <p className="text-red-500 text-xs">{errors.phone.message}</p>}
                 </div>
               </div>
-              
+
               <div>
                 <input
                   type="email"
-                  {...register('email', { 
-                    required: 'Email is required', 
-                    pattern: { value: /\S+@\S+\.\S+/, message: 'Email must be a valid email address.' } 
+                  {...register('email', {
+                    required: 'Email is required',
+                    pattern: { value: /\S+@\S+\.\S+/, message: 'Email must be a valid email address.' }
                   })}
                   placeholder="Email"
                   className="border border-[#E48515] p-2 w-full rounded mb-4 focus:ring-2 focus:ring-[#E48515] focus:border-transparent text-sm"
@@ -97,16 +98,16 @@ const PrayerRequest = () => {
 
               <div>
                 <textarea
-                  {...register('message', { 
-                    required: 'Message is required', 
-                    minLength: { value: 10, message: 'Message must be at least 10 characters long.' } 
+                  {...register('message', {
+                    required: 'Message is required',
+                    minLength: { value: 10, message: 'Message must be at least 10 characters long.' }
                   })}
                   placeholder="Your Message..."
                   className="border border-[#E48515] p-2 w-full rounded focus:ring-2 focus:ring-[#E48515] focus:border-transparent text-sm h-20 md:h-32 lg:h-40"
                 ></textarea>
                 {errors.message && <p className="text-red-500 text-xs">{errors.message.message}</p>}
               </div>
-              
+
               <button
                 type="submit"
                 disabled={loading}
@@ -117,9 +118,8 @@ const PrayerRequest = () => {
             </form>
             {formStatus && (
               <div
-                className={`p-2 rounded text-center ${
-                  formStatus.includes('successfully') ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
-                }`}
+                className={`p-2 rounded text-center ${formStatus.includes('successfully') ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
+                  }`}
               >
                 {formStatus}
               </div>
